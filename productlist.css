@@ -1,0 +1,15 @@
+#right{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* gap: 10px; */
+}
+
+.container{
+    padding:10px;
+    width: 70%;
+}
+
+.img{
+    width: 100%;
+    height: 60%;
+}

@@ -13,9 +13,11 @@ var mydatabase= [
         //filtered keys and value
         type: "sweatshirt",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: true,
+            S: true,
+            M: true,
+            L: true,
+            
         },
         color :{
             black: true,
@@ -37,9 +39,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: true,
+            S: false,
+            M: true,
+            L: true
         },
         color :{
             black: true,
@@ -62,9 +65,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: true,
+            S: true,
+            M: false,
+            L: true
         },
         color :{
             black: true,
@@ -87,9 +91,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: true,
+            S: true,
+            M: true,
+            L: true
         },
         color :{
             black: true,
@@ -112,9 +117,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: true,
+            S: true,
+            M: true,
+            L: true
         },
         color :{
             black: true,
@@ -137,9 +143,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: true,
+            S: true,
+            M: true,
+            L: true
         },
         color :{
             black: true,
@@ -162,9 +169,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: true,
+            S: true,
+            M: false,
+            L: true
         },
         color :{
             black: true,
@@ -187,9 +195,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: false,
+            S: true,
+            M: false,
+            L: true
         },
         color :{
             black: true,
@@ -211,9 +220,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: false,
+            S: true,
+            M: false,
+            L: true
         },
         color :{
             black: true,
@@ -235,33 +245,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
-        },
-        color :{
-            black: true,
-            blue: true,
-            green: true,
-            yellow: true,
-        },
-        rating:4.6,
-    },
-    {
-        id: 4,
-        image_url: "https://images.bewakoof.com/t640/men-0-05-goku-badge-printed-sweatshirt-551684-1668513057-1.jpg", 
-        brand: "Bewakoof",
-        name: "Men's Blue Goku Badge Printed Sweatshirt",
-        price:899,
-        strikeprice: 1099,
-        tribememprice: 699,
-        fav: false,
-        //filtered keys and value
-        type: "hoodie",
-        sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: false,
+            S: false,
+            M: false,
+            L: true
         },
         color :{
             black: true,
@@ -283,9 +270,10 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: false,
+            S: true,
+            M: false,
+            L: true
         },
         color :{
             black: true,
@@ -307,9 +295,35 @@ var mydatabase= [
         //filtered keys and value
         type: "hoodie",
         sizes : {
-            small: true,
-            medium: true,
-            large: true
+            XS: false,
+            S: false,
+            M: true,
+            L: true
+        },
+        color :{
+            black: true,
+            blue: true,
+            green: true,
+            yellow: true,
+        },
+        rating:4.6,
+    },
+    {
+        id: 13,
+        image_url: "https://images.bewakoof.com/t640/men-0-05-goku-badge-printed-sweatshirt-551684-1668513057-1.jpg", 
+        brand: "Bewakoof",
+        name: "Men's Blue Goku Badge Printed Sweatshirt",
+        price:899,
+        strikeprice: 1099,
+        tribememprice: 699,
+        fav: false,
+        //filtered keys and value
+        type: "hoodie",
+        sizes : {
+            XS: false,
+            S: true,
+            M: false,
+            L: true
         },
         color :{
             black: true,
@@ -325,11 +339,12 @@ var mydatabase= [
     // mydatabase.map(function(elem, index){
     // console.log(elem.image_url)
     // })
+    document.querySelector(".total-product-count").textContent=mydatabase.length;
 
-
-    displayProducts();
-    function displayProducts(){
-        mydatabase.map(function(elem, index){
+    displayProducts(mydatabase);
+    function displayProducts(data){
+        document.querySelector("#right").textContent="";
+        data.map(function(elem, index){
             var div= document.createElement("div");
             div.setAttribute("class", "container");
 
@@ -350,3 +365,55 @@ var mydatabase= [
             document.querySelector("#right").append(div);
         })
     }
+
+    //code for the left side drop down
+   
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+dropdownToggle.addEventListener('click', function () {
+  dropdownMenu.classList.toggle('show');
+  dropdownToggle.parentNode.classList.toggle('show');
+});
+
+//code for the size filtration process
+
+var filtered = JSON.parse(localStorage.getItem("filtered-list")) || [];
+dropdownMenu.addEventListener('click', function (event) {
+    var selectedSize = event.target.innerHTML;
+    mydatabase.map(function (elem, ind) {
+        if(elem.sizes[selectedSize] == true){
+            if(filtered.indexOf(elem) === -1) {
+                event.target.style.color="red";
+                
+                filtered.push(elem);
+                
+            }
+                ////
+                else {
+                    event.target.style.color="";
+                    filtered = filtered.filter(function(e) {
+                        return e !== elem;
+                    });
+                }
+
+                
+            ////
+        }
+    });
+
+    localStorage.setItem("filtered-list", JSON.stringify(filtered));
+    if (filtered.length !=0){
+        displayProducts(filtered)
+        document.querySelector(".total-product-count").textContent=filtered.length;
+    }
+    else{
+        localStorage.clear;
+        location.reload();
+    }
+    
+    
+  });
+
+  
+

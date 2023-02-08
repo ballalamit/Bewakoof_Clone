@@ -1,7 +1,49 @@
+
+#parent{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#left{
+    width: 255px;
+    border: 1px solid;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-menu li {
+    padding: 10px 20px;
+  }
+  
+  .dropdown.show .dropdown-menu {
+    display: block;
+  }
+  
+
+/* Right side */
 #right{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* gap: 10px; */
+    
 }
 
 .container{

@@ -25,7 +25,9 @@ var mydatabase= [
             green: true,
             yellow: true,
         },
-        rating:4.3
+        rating:4.3,
+
+        kind: "Popular"
     },
     {
         id: 2,
@@ -51,6 +53,7 @@ var mydatabase= [
             yellow: true,
         },
         rating:4.6,
+        kind: "Popular"
     },
 
     {
@@ -58,7 +61,7 @@ var mydatabase= [
         image_url: "https://images.bewakoof.com/t640/men-s-teal-blue-hoodie-499039-1674553104-1.jpg", 
         brand: "Bewakoof",
         name: "Men's Teal Blue Hoodie",
-        price:899,
+        price:799,
         strikeprice: 1099,
         tribememprice: 699,
         fav: false,
@@ -77,6 +80,7 @@ var mydatabase= [
             yellow: true,
         },
         rating:4.6,
+        kind: "Popular"
     },
 
     {
@@ -84,7 +88,7 @@ var mydatabase= [
         image_url: "https://images.bewakoof.com/t640/men-0-05-goku-badge-printed-sweatshirt-551684-1668513057-1.jpg", 
         brand: "Bewakoof",
         name: "Men's Blue Goku Badge Printed Sweatshirt",
-        price:899,
+        price:889,
         strikeprice: 1099,
         tribememprice: 699,
         fav: false,
@@ -103,6 +107,7 @@ var mydatabase= [
             yellow: true,
         },
         rating:4.6,
+        kind: "Popular"
     },
 
     {
@@ -115,7 +120,7 @@ var mydatabase= [
         tribememprice: 699,
         fav: false,
         //filtered keys and value
-        type: "hoodie",
+        type: "sweatshirt",
         sizes : {
             XS: true,
             S: true,
@@ -129,6 +134,7 @@ var mydatabase= [
             yellow: true,
         },
         rating:4.6,
+        kind: "New"
     },
 
     {
@@ -136,7 +142,7 @@ var mydatabase= [
         image_url: "https://images.bewakoof.com/t640/men-0-05-goku-badge-printed-sweatshirt-551684-1668513057-1.jpg", 
         brand: "Bewakoof",
         name: "Men's Blue Goku Badge Printed Sweatshirt",
-        price:899,
+        price:599,
         strikeprice: 1099,
         tribememprice: 699,
         fav: false,
@@ -154,15 +160,16 @@ var mydatabase= [
             green: true,
             yellow: true,
         },
-        rating:4.6,
+        rating:3.4,
+        kind: "New"
     },
 
     {
         id: 7,
         image_url: "https://images.bewakoof.com/t640/men-0-05-goku-badge-printed-sweatshirt-551684-1668513057-1.jpg", 
-        brand: "Bewakoof",
+        brand: "Adro",
         name: "Men's Blue Goku Badge Printed Sweatshirt",
-        price:899,
+        price:199,
         strikeprice: 1099,
         tribememprice: 699,
         fav: false,
@@ -181,19 +188,20 @@ var mydatabase= [
             yellow: true,
         },
         rating:4.6,
+        kind: "New"
     },
 
     {
         id: 8,
         image_url: "https://images.bewakoof.com/t640/men-0-05-goku-badge-printed-sweatshirt-551684-1668513057-1.jpg", 
-        brand: "Bewakoof",
+        brand: "Rigo",
         name: "Men's Blue Goku Badge Printed Sweatshirt",
         price:899,
         strikeprice: 1099,
         tribememprice: 699,
         fav: false,
         //filtered keys and value
-        type: "hoodie",
+        type: "sweatshirt",
         sizes : {
             XS: false,
             S: true,
@@ -206,12 +214,12 @@ var mydatabase= [
             green: true,
             yellow: true,
         },
-        rating:4.6,
+        rating:2.6,
     },
     {
         id: 9,
         image_url: "https://images.bewakoof.com/t640/men-0-05-goku-badge-printed-sweatshirt-551684-1668513057-1.jpg", 
-        brand: "Bewakoof",
+        brand: "Rigo",
         name: "Men's Blue Goku Badge Printed Sweatshirt",
         price:899,
         strikeprice: 1099,
@@ -256,12 +264,12 @@ var mydatabase= [
             green: true,
             yellow: true,
         },
-        rating:4.6,
+        rating:3.3,
     },
     {
         id: 11,
         image_url: "https://images.bewakoof.com/t640/men-0-05-goku-badge-printed-sweatshirt-551684-1668513057-1.jpg", 
-        brand: "Bewakoof",
+        brand: "Snitch",
         name: "Men's Blue Goku Badge Printed Sweatshirt",
         price:899,
         strikeprice: 1099,
@@ -281,7 +289,7 @@ var mydatabase= [
             green: true,
             yellow: true,
         },
-        rating:4.6,
+        rating:2.6,
     },
     {
         id: 12,
@@ -331,7 +339,7 @@ var mydatabase= [
             green: true,
             yellow: true,
         },
-        rating:4.6,
+        rating:3.7,
     }
 
 ]
@@ -352,56 +360,88 @@ var mydatabase= [
             img.setAttribute("src",elem.image_url)
             img.setAttribute("class", "img")
 
-            var h3= document.createElement("h3");
-            h3.textContent=elem.name;
+            //
+            var divforbrandandname=document.createElement("div");
+            divforbrandandname.setAttribute("class", "divforbrandandname");
 
+            var h3= document.createElement("h3");
+            h3.textContent=elem.brand;
+
+            var h4= document.createElement("h4");
+            h4.textContent=elem.name;
+            divforbrandandname.append(h3,h4)
+            //
+
+            //////
+
+            //
+            var divforfavicon=document.createElement("div");
+            divforfavicon.setAttribute("class", "divforfavicon");
+
+            var heart=document.createElement("i");
+            heart.setAttribute("class", "fa-regular fa-heart heart-icon");
+            
+            divforfavicon.append(heart);
+
+            var divfornamesandfavicon=document.createElement("div");
+            divfornamesandfavicon.setAttribute("class", "divfornamesandfavicon");
+
+            divfornamesandfavicon.append(divforbrandandname,divforfavicon)
+            //
+            //////
+
+            //
+            var divforprices=document.createElement("div");
+            divforprices.setAttribute("class", "divforprices");
             var p=document.createElement("p");
-            p.textContent=elem.price;
+            p.setAttribute("class", "price");
+
+            p.textContent= "₹" + elem.price;
 
             var strikeprice=document.createElement("p");
-            strikeprice.textContent=elem.strikeprice;
+            strikeprice.textContent="₹" + elem.strikeprice;
 
-            div.append(img, h3, p, strikeprice);
+            divforprices.append(p, strikeprice);
+            //
+
+            /////
+
+
+            //
+            var divfortribemember= document.createElement("div");
+            var tribeprice=document.createElement("p");
+            tribeprice.textContent= "₹" + elem.tribememprice + " For TriBe Members";
+            divfortribemember.setAttribute("class", "divfortribemember");
+            divfortribemember.append(tribeprice);
+
+
+
+            div.append(img,divfornamesandfavicon,divforprices, divfortribemember  );
             document.querySelector("#right").append(div);
         })
     }
 
-    //code for the left side drop down
+
    
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-const dropdownMenu = document.querySelector('.dropdown-menu');
-
-dropdownToggle.addEventListener('click', function () {
-  dropdownMenu.classList.toggle('show');
-  dropdownToggle.parentNode.classList.toggle('show');
-});
-
 //code for the size filtration process
-
+var sizemenu= document.querySelector('.ulClasssize');
 var filtered = JSON.parse(localStorage.getItem("filtered-list")) || [];
-dropdownMenu.addEventListener('click', function (event) {
+sizemenu.addEventListener('click', function (event) {
     var selectedSize = event.target.innerHTML;
-    mydatabase.map(function (elem, ind) {
-        if(elem.sizes[selectedSize] == true){
-            if(filtered.indexOf(elem) === -1) {
-                event.target.style.color="red";
-                
-                filtered.push(elem);
-                
-            }
-                ////
-                else {
-                    event.target.style.color="";
-                    filtered = filtered.filter(function(e) {
-                        return e !== elem;
-                    });
-                }
 
-                
-            ////
+    //this is for sizes
+    mydatabase.forEach(function (elem) {
+        if (elem.sizes[selectedSize]) {
+          let sizeIndex = filtered.indexOf(elem);
+          if (sizeIndex === -1) {
+            filtered.push(elem);
+            event.target.style.color = "red";
+          } else {
+            filtered.splice(sizeIndex, 1);
+            event.target.style.color = "";
+          }
         }
-    });
-
+      });
     localStorage.setItem("filtered-list", JSON.stringify(filtered));
     if (filtered.length !=0){
         displayProducts(filtered)
@@ -411,9 +451,202 @@ dropdownMenu.addEventListener('click', function (event) {
         localStorage.clear;
         location.reload();
     }
-    
-    
   });
 
   
+  document.querySelector(".clearall").addEventListener("click", clearAll);
+
+  function clearAll(){
+    localStorage.clear("filtered-list");
+    location.reload();
+  }
+
+
+
+//Adding in filter array for Category
+
+var categorymenu= document.querySelector('.ulClass');
+categorymenu.addEventListener('click', function (event) {
+    var selectedOption = event.target.innerHTML;
+  
+    if (selectedOption === "hoodie" || selectedOption === "sweatshirt") {
+      mydatabase.forEach(function (elem) {
+        console.log(elem);
+        if (elem.type === selectedOption) {
+          let optionIndex = filtered.indexOf(elem);
+          if (optionIndex === -1) {
+            filtered.push(elem);
+            event.target.style.color = "red";
+          } else {
+            filtered.splice(optionIndex, 1);
+            event.target.style.color = "";
+          }
+        }
+      });
+      localStorage.setItem("filtered-list", JSON.stringify(filtered));
+      if (filtered.length != 0) {
+        displayProducts(filtered);
+        document.querySelector(".total-product-count").textContent = filtered.length;
+      } else {
+        localStorage.clear();
+        location.reload();
+      }
+    }
+  });
+  
+  var brandmenu= document.querySelector('.ulClassbrand');
+  brandmenu.addEventListener('click', function (event) {
+      var selectedOption = event.target.innerHTML;
+    
+      if (selectedOption === "Bewakoof" || selectedOption === "Rigo" || selectedOption === "Adro" || selectedOption === "Snitch") {
+        mydatabase.forEach(function (elem) {
+          console.log(elem);
+          if (elem.brand === selectedOption) {
+            let optionIndex = filtered.indexOf(elem);
+            if (optionIndex === -1) {
+              filtered.push(elem);
+              event.target.style.color = "red";
+            } else {
+              filtered.splice(optionIndex, 1);
+              event.target.style.color = "";
+            }
+          }
+        });
+        localStorage.setItem("filtered-list", JSON.stringify(filtered));
+        if (filtered.length != 0) {
+          displayProducts(filtered);
+          document.querySelector(".total-product-count").textContent = filtered.length;
+        } else {
+          localStorage.clear();
+          location.reload();
+        }
+      }
+    });
+
+    //for Rating
+
+    var ratingmenu = document.querySelector('.ulClassrating');
+
+ratingmenu.addEventListener('click', function (event) {
+  var selectedOption = event.target.innerHTML;
+
+  //Filter the products based on rating
+  mydatabase.forEach(function (elem) {
+    if (selectedOption === "4.5 and above" && elem.rating >= 4.5) {
+      let optionIndex = filtered.indexOf(elem);
+      if (optionIndex === -1) {
+        filtered.push(elem);
+        event.target.style.color = "red";
+      } else {
+        filtered.splice(optionIndex, 1);
+        event.target.style.color = "";
+      }
+    }
+    if (selectedOption === "4 to 4.4" && elem.rating >= 4 && elem.rating < 4.5) {
+      let optionIndex = filtered.indexOf(elem);
+      if (optionIndex === -1) {
+        filtered.push(elem);
+        event.target.style.color = "red";
+      } else {
+        filtered.splice(optionIndex, 1);
+        event.target.style.color = "";
+      }
+    }
+    if (selectedOption === "3.5 to 3.9" && elem.rating >= 3.5 && elem.rating < 4) {
+      let optionIndex = filtered.indexOf(elem);
+      if (optionIndex === -1) {
+        filtered.push(elem);
+        event.target.style.color = "red";
+      } else {
+        filtered.splice(optionIndex, 1);
+        event.target.style.color = "";
+      }
+    }
+    if (selectedOption === "3 to 3.4" && elem.rating >= 3 && elem.rating < 3.5) {
+      let optionIndex = filtered.indexOf(elem);
+      if (optionIndex === -1) {
+        filtered.push(elem);
+        event.target.style.color = "red";
+      } else {
+        filtered.splice(optionIndex, 1);
+        event.target.style.color = "";
+      }
+    }
+    if (selectedOption === "less than 3" && elem.rating < 3) {
+      let optionIndex = filtered.indexOf(elem);
+      if (optionIndex === -1) {
+        filtered.push(elem);
+        event.target.style.color = "red";
+      } else {
+        filtered.splice(optionIndex, 1);
+        event.target.style.color = "";
+      }
+    }
+  });
+
+  //Store the filtered list in local storage
+  localStorage.setItem("filtered-list", JSON.stringify(filtered));
+
+  //If there are no products in the filtered list, reload the page
+  if (filtered.length != 0) {
+    displayProducts(filtered);
+    document.querySelector(".total-product-count").textContent = filtered.length;
+  } else {
+    localStorage.clear();
+    location.reload();
+  }
+});
+
+
+
+var sortByMenu = document.querySelector('.ulClasskind');
+
+sortByMenu.addEventListener('click', function (event) {
+  var selectedOption = event.target.innerHTML;
+  if (selectedOption === "Popular" || selectedOption === "New" || selectedOption === "Price : High to Low" || selectedOption === "Price : Low to High") {
+    mydatabase.forEach(function (elem) {
+      if (elem.kind === selectedOption) {
+        let optionIndex = filtered.indexOf(elem);
+        if (optionIndex === -1) {
+          filtered.push(elem);
+          event.target.style.color = "red";
+        } else {
+          filtered.splice(optionIndex, 1);
+          event.target.style.color = "";
+          console.log(filtered.length)
+        }
+
+      }
+    });
+
+    if (selectedOption == "Price : Low to High") {
+        event.target.style.color = "red";
+        var htl= document.querySelector(".htl");
+        htl.style.color="black";
+      mydatabase.sort((a, b) => a.price - b.price);
+      displayProducts(mydatabase)
+    } else if (selectedOption == "Price : High to Low") {
+        mydatabase.sort((a, b) => b.price - a.price);
+        event.target.style.color = "red";
+        var lth= document.querySelector(".lth");
+        lth.style.color="black";
+        displayProducts(mydatabase)
+    }
+
+    
+    
+
+    localStorage.setItem("filtered-list", JSON.stringify(filtered));
+    if (filtered.length != 0) {
+        console.log(filtered.length)
+      displayProducts(filtered);
+      document.querySelector(".total-product-count").textContent = filtered.length;
+    } else {
+      localStorage.clear();
+      //location.reload();
+    }
+  }
+});
+
+
 

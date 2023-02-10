@@ -82,6 +82,7 @@
 
 
         }
+       
 
         #total-signup-page .right-signup>div button {
 
@@ -102,6 +103,11 @@
 
 
 
+        }
+        #signup-btn:hover{
+            color: lightblue;
+            cursor: pointer;
+            scale: 1.1;
         }
 
         #checkbox-signup {
@@ -156,7 +162,7 @@
             transition: ease-in-out;
         }
         </style>
-        <link rel="stylesheet" href="./style/navbar.css">
+        <!-- <link rel="stylesheet" href="./style/navbar.css"> -->
   </head>
   <body>
     <div id = "navbar"></div>
@@ -195,16 +201,16 @@
 
 </html>
 <script type="module">
-    import navbar from "./components/navbar.js";
+    // import navbar from "./components/navbar.js";
     // console.log(navbar());
 
-    document.getElementById("navbar").innerHTML=navbar();
-document.querySelector("#nav_bar_manu").style.display = "none";
+//     document.getElementById("navbar").innerHTML=navbar();
+// document.querySelector("#nav_bar_manu").style.display = "none";
     
-    var item = JSON.parse(localStorage.getItem("bewakoof_cart"))||[];
-    // console.log(items);
-    document.getElementById("items").innerText = item.length;
-    console.log(item.length);  
+//     var item = JSON.parse(localStorage.getItem("bewakoof_cart"))||[];
+//     // console.log(items);
+//     document.getElementById("items").innerText = item.length;
+//     console.log(item.length);  
     
     
 
@@ -233,7 +239,7 @@ document.querySelector("#nav_bar_manu").style.display = "none";
 
 
     document.querySelector("#signup-btn").addEventListener("click", function () {
-
+console.log(obj)
         var obj = {
             fullname: document.querySelector(".fullname_input").value,
             Mobile_input: document.querySelector(".Mobile_input").value,
@@ -244,12 +250,13 @@ document.querySelector("#nav_bar_manu").style.display = "none";
         var name1= document.querySelector(".fullname_input").value;
      var mobile1 =document.querySelector(".Mobile_input").value;
     var email1 =document.querySelector(".email_input").value;
-    if(name1==""||mobile1==""||email1==""){
+    var password1=document.querySelector(".password_input").value;
+    if(name1=="" || mobile1=="" || email1=="" || password1==""){
         alert("Enter All Values")
     } else{
         window.location.href = "./loginotp.html";
     }
-
+    // console.log(obj)
 
   localStorage.setItem("customer_whole_data", JSON.stringify(obj))
 

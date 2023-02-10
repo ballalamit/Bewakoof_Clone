@@ -348,7 +348,7 @@ var mydatabase= [
     // console.log(elem.image_url)
     // })
     document.querySelector(".total-product-count").textContent=mydatabase.length;
-    var favitems= JSON.parse(localStorage.getItem("cart-items")) || [];
+    var favitems= JSON.parse(localStorage.getItem("bewakoof_wishlist")) || [];
     displayProducts(mydatabase);
     function displayProducts(data){
         document.querySelector("#right").textContent="";
@@ -671,7 +671,7 @@ sortByMenu.addEventListener('click', function (event) {
 // var favitems= JSON.parse(localStorage.getItem("cart-items")) || [];
 
 // function addfavItems(elem, index){
-
+     
 //   if (favitems.indexOf(elem) !==-1){
 //     console.log(" present")
 //     event.target.style.color = "black";
@@ -694,11 +694,11 @@ sortByMenu.addEventListener('click', function (event) {
 
 function addfavItems(elem, index){
   favitems.push(elem);
-  localStorage.setItem("cart-items", JSON.stringify(favitems));
+  localStorage.setItem("bewakoof_wishlist", JSON.stringify(favitems));
 }
 
 function removefavItems(elem, index){
   let itemIndex = favitems.indexOf(elem);
   favitems.splice(itemIndex, 1);
-  localStorage.setItem("cart-items", JSON.stringify(favitems));
+  localStorage.setItem("bewakoof_wishlist", JSON.stringify(favitems));
 }

@@ -6,9 +6,14 @@ body {
 }
 
 #mainnav{
+  
   margin: auto;
+  margin-top: -100px;
   width: 100%;
-  position: sticky;
+  position: fixed;
+  background-color: white;
+  /* border: 2px solid red; */
+  
 }
 
 #nav1-1{
@@ -167,9 +172,11 @@ gap: 30px;
 h2{
   margin-left: 85px;
   margin-bottom: 40px;
+  margin-top:100px;
 }
 
 .horizontailline {
+
   width: 124px;
     height: 2px;
     background-color: #fbd139;
@@ -177,7 +184,7 @@ h2{
     margin: 6px 0 0 2px;
     position: absolute;
     left: 85px;
-    top: 106px;
+    top: 121px;
 }
 /* inner filters */
 
@@ -467,10 +474,18 @@ margin-right: 10px;
 }
 
 @media screen and (max-width: 825px){
+  /* code is for navbr */
+  #nav1-1,#search{
+    display: none;
+  }
+
+
   #left{
     width: 150px;
     left: 80px;
   }
+
+
   
 
   #right{
@@ -489,7 +504,9 @@ margin-right: 10px;
 }
 
 @media screen and (max-width: 578px){
-  
+  #nav1-1,#search{
+    display: none;
+  }
   #right{
    
     grid-template-columns: repeat(1, 1fr);
@@ -506,7 +523,9 @@ margin-right: 10px;
 }
 
 @media screen and (max-width: 540px){
-  
+  #nav1-1,#search{
+    display: none;
+  }
   #left{
     display: none;
   }
@@ -553,6 +572,19 @@ margin-right: 10px;
     margin-left: 65px;
     margin-bottom: 40px;
   }
+/* */
 
+}
+
+/* media for nov text */
+@media screen and (min-width:300px) and (max-width:825px){
+  #category h4,#category1 div,#category img,#search{
+    width: auto;
+    gap: 10px;
+     font-size: 8px;
+    }
+    /* #nav2{   
+      display: none;
+           }  */
 }
 

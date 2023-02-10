@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -104,6 +104,13 @@
             color: gray;
             font-weight: bold;
         }
+        #login-otp-btn:hover{
+            background-color: rgb(193, 193, 44);
+            scale: 1.1;
+            color: black;
+            cursor: pointer;
+
+        }
     </style>
 </head>
 
@@ -113,9 +120,7 @@
 
         <div id="verify-part">
             <h1>verify with otp</h1>
-            <p>Sent to </p>
-            <input type="number" id="sent-to-number">
-            <p>Enter Otp </p>
+                 <p>Enter Otp </p>
             <div id="flex-input">
                 <form action="">
                     <input id="otp1" type="text" maxlength="1"><input id="otp2" type="text" maxlength="1"><input
@@ -134,27 +139,27 @@
 </body>
 
 </html>
-<script type="module">
-    import navbar from "./components/navbar.js";
+ <script type="module"> 
+    // import navbar from "./components/navbar.js";
     // console.log(navbar());
 
-    document.getElementById("navbar").innerHTML = navbar();
-    document.querySelector("#nav_bar_manu").style.display = "none";
+    // document.getElementById("navbar").innerHTML = navbar();
+    // document.querySelector("#nav_bar_manu").style.display = "none";
 
-    var item = JSON.parse(localStorage.getItem("bewakoof_cart")) || [];
-    // console.log(items);
-    document.getElementById("items").innerText = item.length;
-    console.log(item.length);
-
-
-
-    var sent = document.querySelector("#sent-to-number");
+    // var item = JSON.parse(localStorage.getItem("bewakoof_cart")) || [];
+    // // console.log(items);
+    // document.getElementById("items").innerText = item.length;
+    // console.log(item.length);
 
 
 
-    var customer_whole_data = JSON.parse(localStorage.getItem("customer_whole_data"));
+    // var sent = document.querySelector("#sent-to-number");
 
-    sent.value = customer_whole_data.Mobile_input;
+
+
+    // var customer_whole_data = JSON.parse(localStorage.getItem("customer_whole_data"));
+
+    // sent.value = customer_whole_data.Mobile_input;
     document.querySelector("#login-otp-btn").addEventListener("click", checkotp)
 
     function checkotp() {
@@ -167,7 +172,7 @@
         if (otp1 == 1 && otp2 == 2 && otp3 == 3 && otp4 == 4) {
 
             alert("Login successful !")
-            window.location.href = "/index.html";
+            window.location.href = "index.html";
 
         }
         else {

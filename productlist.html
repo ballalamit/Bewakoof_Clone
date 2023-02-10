@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="productlist.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="mainnav">
+    <div id="nav">
+        <nav id="nav1">
+            <div id="nav1-1">
+                <h6>Offers</h6>
+                <h6>Fanbook</h6>
+                <h6><i class="fa-solid fa-mobile"></i>Download App</h6>
+           
+                <h6>TriBe Membership</h6>
+               
+                <h6 class="n1">Contact Us</h6>
+                <h6>Track Order</h6>
+            </div>
+        
+    </nav>
+    <nav id="nav2">
+            <img src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg" alt="">
+            <div id="category">
+                <h4>MEN</h4>
+            <h4>WOMEN</h4>
+            <h4>MOBILE COVERS</h4>
+        </div>    
+            <input type="text" name="" placeholder="       Search By product,category or collection" id="search">
+                         <div id="category1">       
+                <i class="fa-duoton e fa-pipe"></i>  
+                <h4>Login</h4>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <img src="https://images.bewakoof.com/web/india-flag-round-1639566913.png" alt="" class="region">
+            </div>
+        </nav>
+
+</div>
+
+
+     <!-- mycode starts from here -->
+    <!-- <div style="width: 1200px; background-color: red; height: 100px;">
+        
+    </div> -->
+    <div>
+        <h2 >Men's Hoodies &Sweatshirts (<span class="total-product-count"></span>)</h2>
+        <div class="horizontailline"></div>
+    </div>
+    <div id="parent">
+        <div id="left">
+            <div class="filterdiv">
+                <p>FILTERS</p>
+                <p class="clearall">Clear All</button></p>
+            </div>
+            
+            <details class="details">
+                <summary>Size<span><i class="fa-solid fa-chevron-down"></i> </span></summary>
+                <ul  class="ulClasssize">
+                    <li>XS</li>
+                    <li>S</li>
+                    <li>M</li>
+                    <li>L</li>
+                     
+                </ul>
+             </details>
+             <hr/>
+             <details class="details">
+                <summary>Category<span> <i class="fa-solid fa-chevron-down"></i> </span></summary>
+                <ul class="ulClass">
+                    <li >hoodie</li>
+                    <li >sweatshirt</li>
+                     
+                </ul>
+             </details>
+             <hr/>
+             <details class="details">
+                <summary>Brand<span> <i class="fa-solid fa-chevron-down"></i></span></summary>
+                <ul class="ulClassbrand">
+                    <li >Bewakoof</li>
+                    <li >Rigo</li>
+                    <li >Adro</li>
+                    <li >Snitch</li>
+                     
+                </ul>
+             </details>
+             <hr/>
+
+             <details class="details">
+                <summary>Rating<span> <i class="fa-solid fa-chevron-down"></i></span></summary>
+                <ul class="ulClassrating">
+                    <li >4.5 and above</li>
+                    <li >4 to 4.4</li>
+                    <li >3.5 to 3.9</li>
+                    <li >3 to 3.4</li>
+                    <li >less than 3</li>
+                     
+                </ul>
+             </details>
+             <hr/>
+
+             <details class="details">
+                <summary>Sort By<span> <i class="fa-solid fa-chevron-down"></i></span></summary>
+                <ul class="ulClasskind">
+                    <!-- <li >Popular</li>
+                    <li >New</li> -->
+                    <li class="lth">Price : Low to High</li>
+                    <li class="htl" >Price : High to Low</li>
+                     
+                </ul>
+             </details>
+             <hr/>
+
+             <details class="details">
+                <summary>Color<span> <i class="fa-solid fa-chevron-down"></i></span></summary>
+                <ul class="ulClassclor">
+                    <li style="background-color: black; width: 35px; height: 30px; border-radius: 2px; display: inline-block;" >bl</li>
+                    <li style="background-color: blue; width: 35px; height: 30px; border-radius: 2px; display: inline-block; color: blue;" >b</li>
+                    
+                    <li style="background-color: green; width: 35px; height: 30px; border-radius: 2px; display: inline-block; color: green;" >g</li>
+                    <br>
+                    <li style="background-color: yellow; width: 35px; height: 30px; border-radius: 2px; display: inline-block; color: yellow; margin-top: 5px;" >Y</li>
+                    <li style="background-color: red; width: 35px; height: 30px; border-radius: 2px; display: inline-block; color: red; margin-top: 5px;" >r</li>  
+                </ul>
+             </details>
+             <hr/>
+             <details class="details">
+                <summary>Neck<span><i class="fa-solid fa-chevron-down"></i></span></summary>
+                <ul class="ulClasskind">
+                    <!-- <li >Popular</li>
+                    <li >New</li> -->
+                    <li class="lth">Price : Low to High</li>
+                    <li class="htl" >Price : High to Low</li>
+                     
+                </ul>
+             </details>
+             <hr/>
+             <details class="details">
+                <summary>Design<span><i class="fa-solid fa-chevron-down"></i></span></summary>
+                <ul class="ulClasskind">
+                    <li >Popular</li>
+                    <li >New</li>
+                    <li class="lth">Price : Low to High</li>
+                    <li class="htl" >Price : High to Low</li>
+                     
+                </ul>
+             </details>
+             <hr/>
+             <details class="details">
+                <summary>Fit<span> <i class="fa-solid fa-chevron-down"></i></span></summary>
+                <ul class="ulClasskind">
+                    <li >Popular</li>
+                    <li >New</li>
+                    <li class="lth">Price : Low to High</li>
+                    <li class="htl" >Price : High to Low</li>
+                     
+                </ul>
+             </details>
+             <hr/>
+             
+
+        </div>
+        <div id="right">
+    
+        </div>
+    </div>
+    
+</body>
+</html>
+<script src="productlist.js"></script>
+<script src="https://kit.fontawesome.com/abb58b85fe.js" crossorigin="anonymous"></script>

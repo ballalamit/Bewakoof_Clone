@@ -27,11 +27,11 @@
     /* margin-bottom: 100px; */
     /* border: 5px solid red; */
 }
-#nav+#scroll{
+/* #nav+#scroll{
     padding-top: 100px;
-}
+} */
 .n1{
-margin-left: 700px;
+margin-left: 600px;
 }
 #nav1{
     /* background-color:white; */
@@ -290,7 +290,7 @@ gap: 30px;
 
     #slides{          
         display: flex;
-  transition: all 0.0s ease-in-out;
+  /* transition: all 0.0s ease-in-out; */
         cursor: pointer;
         /* position: relative;  */
       height: 70vh;
@@ -391,18 +391,50 @@ gap: 30px;
 
   @media  screen and (max-width:800px)and (min-width:200px){
 
- #responsive,#frame1,#trending,{
+ #scroll,#frame1,#trending{
     flex-wrap: wrap;
-     flex-direction: row; 
-       
+     /* flex-direction: row; 
+        */
  }
- #responsive img{
+ #slide img{
      flex: 0 0 100%;
  }
- #bottom1,#bottom2,#bottom3{
+ #bottom1,#bottom3{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    
+    grid-template-columns: repeat(2,1fr);    
 }
+#bottom2{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);    
+}
+#nav2{   
+    display: none;
+         } */
+    #nav3 {
+        display: flex;
+        flex-wrap: wrap;
+        margin:auto;
+        font-size: 10px;
+      }
+     /* #long1{
+margin: auto;
+     } */
+     .n1{
+        margin-left: 50px;
+        font-size: 10px;
+     }
+     #footer,#footer div{
+               display: flex;
+            flex-wrap: wrap;
+            margin:auto;
+            font-size: 15px;
+            width: 100%;
+          }
+          #nav #nav3 a{
+          gap: 10px;
+           font-size: 8px;
+          }
 
-  }
+     }
+    
+  

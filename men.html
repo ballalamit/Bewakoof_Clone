@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #carousel1{
+            display: flex; 
+            overflow: hidden;
+            position: relative;
+            margin-top: 10px;
+        }
+        #carousel1 img{
+            width: 33%;
+            transition: transform 0.6s ease-in-out;
+            margin-right: 40px;
+            //margin: auto;
+            justify-content: center;
+            
+        }
+        #carousel2{
+            display: flex; 
+            overflow: hidden;
+            position: relative;
+        }
+        #carousel2 img{
+            width: 33%;
+            transition: transform 0.6s ease-in-out;
+            margin-right: 40px;
+            //margin: auto;
+            justify-content: center;
+            
+        }
+        #poster1 img{
+           padding: 15px;
+           width: 98%;
+            
+        }
+        #grid{
+            
+            display:grid;
+            grid-template-columns: repeat(9,1fr);
+            width: 85%;
+            margin: auto;
+            justify-content: center;
+        }
+        #grid img {
+            width: 70%;
+            margin: auto;
+            justify-content: center;
+        }
+        #Trend{
+            text-align: center;
+            font-size: large;
+        }
+        #trending{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            margin: auto;
+            justify-content: center;
+        }
+        #trending img{
+            width: 100%;
+            margin: auto;
+            justify-content: center;
+        }
+        #cardview
+        {   
+            width: 95%;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 40px;
+            margin: auto;
+            justify-content: center;
+            
+        }
+        #card1{
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            
+        }
+        #card1 img{
+            width: 100%;
+            
+        }
+        #deals{
+            text-align: center;
+        }
+        #images{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+        }
+        #images img{
+            width: 100%;
+        }
+        h3{
+            text-align: center;
+        }
+
+        #nav1-1{
+    display: flex;
+    gap: 20px;
+    margin-top: -25px;
+    width: 100%;
+    padding-left: 70px;
+    /* margin-left: 50px; */
+    font-weight: 20px;
+    align-items: start;
+    background-color: rgb(206, 216, 219);
+    color: #5d5d5d;
+    font-weight:0;
+    cursor: pointer;
+    font-size: 100%;
+    
+    height: 20px;
+    /* border: 2px solid red; */
+   
+    align-items: center;
+   
+}
+
+#nav{
+    /* position:fixed; */
+    width: 100%;
+}
+.n1{
+margin-left: 700px;
+}
+#nav1{
+    /* background-color:white; */
+    margin-top: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ height: 45px;
+}
+#nav2 img {
+    width: 180px;
+    margin-left: 20px;
+    align-items: center;    
+    margin-top: 10px;
+    cursor: pointer;
+}
+#nav2{
+display: flex;
+height: 50px;
+margin-top:-25px;
+cursor: pointer;
+/* background-color:white; */
+/* border: 2px solid red; */
+/* position: fixed; */
+}
+#nav2 div{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    cursor: pointer;
+    background-color:white;
+    /* border: 2px solid red; */
+    }
+    #search{
+        margin-left:200px ;
+        width: 280px;       
+       margin-top: 15px; 
+       height: 30px;    
+       /* border: 2px solid red; */
+       /* margin-left: -200px;    */
+       cursor: pointer;
+    }
+   #nav2 div img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    /* margin-top:12px; */
+   } 
+   /* #nav2 i{
+    margin-top: 20px;
+   } */
+  
+ #category{
+    margin-left: 30px;
+    margin-right: -30px;
+gap: 30px;
+/* border: 2px solid red; */
+ }
+ #category1 img{
+    gap: 5px;
+     /* border: 2px solid red; */
+     margin-top: -5px;
+     margin-left: -10px;
+     cursor: pointer;
+ }
+
+ 
+ @media only screen and (max-width: 768px) {
+  #carousel1 {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+  }
+  #carousel1 img {
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+    margin-right: 40px;
+    justify-content: center;
+  }
+  #carousel2 {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  #carousel2 img {
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+    margin-right: 40px;
+    justify-content: center;
+  }
+  #poster1 img {
+    padding: 15px;
+    width: 98%;
+  }
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 85%;
+    margin: auto;
+    justify-content: center;
+  }
+  #grid img {
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+  }
+  #trending {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    justify-content: center;
+  }
+  #trending img {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+  }
+  #cardview {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: auto;
+    justify-content: center;
+  }
+  #card1 img {
+    width: 100%;
+  }
+  #images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  #images img {
+    width: 100%;
+  }
+  .n1 {
+    margin-left: 400px;
+  }
+  #nav2 img {
+    width: 120px;
+    margin-left: 20px;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  #search {
+    margin-left: 100px;
+    width: 180px;
+    margin-top: 15px;
+    height: 30px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+    #logo {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+nav {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+#navbar {
+flex-direction: column;
+align-items: center;
+}
+#navbar a {
+margin: 10px 0;
+text-align: center;
+width: 100%;
+}
+#logo {
+margin: 10px 0;
+}
+
+  #carousel1 {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+  }
+  #carousel1 img {
+    width: 100%;
+    transition: transform 0.6s ease-in-out;
+    margin-right: 40px;
+    justify-content: center;
+  }
+  #carousel2 {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  #carousel2 img {
+    width: 100%;
+    transition: transform 0.6s ease-in-out;
+    margin-right: 40px;
+    justify-content: center;
+  }
+  #poster1 img {
+    padding: 15px;
+    width: 98%;
+  }
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 85%;
+    margin: auto;
+    justify-content: center;
+  }
+  #grid img {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+  }
+  #trending {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: auto;
+    justify-content: center;
+  }
+  #trending img {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+  }
+  #cardview {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    margin: auto;
+    justify-content: center;
+  }
+  #card1 img {
+    width: 100%;
+  }
+  #images {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  #images img {
+    width: 100%;
+  }
+  .n1 {
+    margin-left: 0;
+  }
+  #nav2 img {
+    width: 80px;
+    margin-left: 0;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  #search {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 15px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+}
+
+#footer {
+        display: grid;
+        background-color: black;
+     }
+     #f1 {
+        display: flex;
+        margin-left: 45px;
+        /* border: 2px solid red; */
+     }
+     #footer h3{       
+        text-align: left;
+        margin-left: 80px;
+        cursor: pointer;
+     }
+    
+    ul{
+        /* border: 2px solid green; */
+    }
+    #f1 ul{
+        color: #fdd835;
+        /* gap: 40px; */
+        justify-content: space-between;
+        cursor: pointer;
+        
+    }
+    #f1 li{
+        font-family: montserrat-regular,sans-serif;
+        color: white;
+        margin-top: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        list-style: none;
+    }
+     /* #footer > ul>li{
+        display: block;
+     } */
+     #Email{
+        cursor: pointer;
+        background-color: black;
+        border: none;
+        border-bottom:1px solid #fdd835;
+        width: 140px;
+        height: 30px;
+     }
+     #btn1{       
+        background-color: #fdd835;
+        color: black;
+        height: 35px;
+        width: 140px;
+        cursor: pointer;
+     }
+     #f2{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        color: white;
+        margin-left: 80px;
+        gap: -20px;
+     }
+     #f2 h4{
+        color: #fdd835;
+     }
+   hr{
+    color: white;
+   }
+   #para{
+    color:white;
+    margin-left: 80px;
+    margin-right: 80px;
+   }
+
+
+ 
+    </style>
+</head>
+<body>
+
+    <div id="nav">
+        <nav id="nav1">
+            <div id="nav1-1">
+                <h6>Offers</h6>
+                <h6>Fanbook</h6>
+                <h6><i class="fa-solid fa-mobile"></i>Download App</h6>
+           
+                <h6>TriBe Membership</h6>
+               
+                <h6 class="n1">Contact Us</h6>
+                <h6>Track Order</h6>
+            </div>
+        
+    </nav>
+    <nav id="nav2">
+            <img src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg" alt="">
+            <div id="category">
+                <h4>MEN</h4>
+            <h4>WOMEN</h4>
+            <h4>MOBILE COVERS</h4>
+        </div>    
+            <input type="text" name="" placeholder="       Search By product,category or collection" id="search">
+                         <div id="category1">       
+                <i class="fa-duoton e fa-pipe"></i>  
+                <h4>Login</h4>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <img src="https://images.bewakoof.com/web/india-flag-round-1639566913.png" alt="" class="region">
+            </div>
+        </nav>
+        <hr>
+
+    <div id="carousel1">
+        <img src="https://images.bewakoof.com/uploads/grid/app/1x1-flat-65-off-common-1674288704.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/bewagoofy-sale-1x1-m-1675779541.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/1x1-b3at999-common--1--1675693780.jpg" alt="">
+    </div>
+    <div id="poster1">
+        <img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-1-1668681804.gif" alt="">    
+    </div>
+    <div id="grid">
+        <img src="https://images.bewakoof.com/uploads/grid/app/new-thumbnail-icon-Men-1675744546.gif" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/Thumbnail-Bestseller-Men-1668491213.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/new-thumbnail-icon-2022-couple-tees-1675667663.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/hotdeals-2-1668491210.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/Thumbnail-Customise-Men-1668491215.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/Thumbnail-New-Arrivals-Men-1668491217.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/last-size-new-thumbnaik-1668491212.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/Thumbnail-PlusSize-Men-1668491218.jpg" alt="">
+        <img src="https://images.bewakoof.com/uploads/grid/app/Thumbnail-Collabs-Men-1668491214.jpg" alt="">
+    </div>
+    <div id="Trend">
+        <h3>TRENDING CATEGORIES</h3>
+    </div>
+    <div id="trending">
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-new-Printed-Tshirt--1--1675842429.png" alt="">
+           
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-Full-Sleeve-Tshirt-1673010261.png" alt="">
+           
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-Oversize-tshirt-1672907491.png" alt="">
+            
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-men-vests--1--1673354000.png" alt="">
+            
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-Jackets-1672907487.png" alt="">
+           
+        </div>
+        <div>
+            <img onclick="window.location.href='productlist.html'" style="cursor: pointer;"src="https://images.bewakoof.com/uploads/grid/app/category-box-Sweatshirt---Hoodies-1672907496.png" alt="">
+            
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-Joggers-1672907489.png" alt="">
+            
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-Pyjamas-1672907493.png" alt="">
+            
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-Shirts-1672907493.png" alt="">
+            
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-boxers-men-1672907482.png" alt="">
+            
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-Jeans-men-1672915059.png" alt="">
+            
+        </div>
+        <div>
+            <img src="https://images.bewakoof.com/uploads/grid/app/category-box-Sweater-1673010262.png" alt="">
+            
+        </div>
+
+    </div>
+    <h3 id="deals">BIGGEST DEALS!</h3>
+    <div id="cardview">
+        <div id="card1">
+            
+            <img src="https://images.bewakoof.com/t320/men-s-black-metallica-oversized-fit-t-shirt-564902-1671801834-1.jpg" alt="">
+            <h4>Bewakoof</h4>
+            <p>Men's Black Metallica Graphic Printed Oversized T-shirt</p>
+            <h4>₹ <span></span></h4>
+        </div>
+        <div id="card1">
+            
+            <img src="https://images.bewakoof.com/t320/men-s-black-metallica-oversized-fit-t-shirt-564902-1671801834-1.jpg" alt="">
+            <h4>Bewakoof</h4>
+            <p>Men's Black Metallica Graphic Printed Oversized T-shirt</p>
+            <h4>₹ <span></span></h4>
+        </div>
+        <div id="card1">
+            
+            <img src="https://images.bewakoof.com/t320/men-s-black-metallica-oversized-fit-t-shirt-564902-1671801834-1.jpg" alt="">
+            <h4>Bewakoof</h4>
+            <p>Men's Black Metallica Graphic Printed Oversized T-shirt</p>
+            <h4>₹ <span></span></h4>
+        </div>
+        <div id="card1">
+            
+            <img src="https://images.bewakoof.com/t320/men-s-black-metallica-oversized-fit-t-shirt-564902-1671801834-1.jpg" alt="">
+            <h4>Bewakoof</h4>
+            <p>Men's Black Metallica Graphic Printed Oversized T-shirt</p>
+            <h4>₹ <span></span></h4>
+        </div>
+        <div id="card1">
+            
+            <img src="https://images.bewakoof.com/t320/men-s-black-metallica-oversized-fit-t-shirt-564902-1671801834-1.jpg" alt="">
+            <h4>Bewakoof</h4>
+            <p>Men's Black Metallica Graphic Printed Oversized T-shirt</p>
+            <h4>₹ <span></span></h4>
+        </div>
+    </div>
+    <div>
+        <p id="explorebutton">Explore All</p>
+    </div>
+        <h3>TOO HOT TO BE MISSED</h3>
+        <div id="images">
+            <img src="https://images.bewakoof.com/uploads/grid/app/revamped-banner-MID-SIZE-B1G1-02-1673359273.jpg" alt="">
+            <img src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner-b2at549-1675843157.jpg" alt="">
+            <img src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner--valentines-02-1674824603.jpg" alt="">
+            <img src="https://images.bewakoof.com/uploads/grid/app/fullsleeves-tshirts-midsize-banner-1674050707.jpg" alt="">
+
+        </div>
+        <h3>BEST OF BEWAKOOF</h3>
+        <div>
+            <div id="carousel2">
+                <img src="https://images.bewakoof.com/uploads/grid/app/1x1-flat-65-off-common-1674288704.jpg" alt="">
+                <img src="https://images.bewakoof.com/uploads/grid/app/bewagoofy-sale-1x1-m-1675779541.jpg" alt="">
+                <img src="https://images.bewakoof.com/uploads/grid/app/1x1-b3at999-common--1--1675693780.jpg" alt="">
+            </div>
+        </div>
+        <h3>OUR BEST PICKS</h3>
+        <div id="images">
+            <img src="https://images.bewakoof.com/uploads/grid/app/midsizebanner-common-jeans-1675667662.jpg" alt="">
+            <img src="https://images.bewakoof.com/uploads/grid/app/midsize-banners-air-ovrszd-cargo-jogs-m-1674133076.jpg" alt="">
+            <img src="https://images.bewakoof.com/uploads/grid/app/plus-size-men-1671719823.jpg" alt="">
+            <img src="https://images.bewakoof.com/uploads/grid/app/new-mid-banner-2023-winterwear-common-Pastels-01-1673253851.jpg" alt="">
+        </div>
+        <div id="poster1">
+            <img src="https://images.bewakoof.com/uploads/grid/app/desktop-survey-1673330211.jpg" alt="">    
+        </div>
+        <div id="poster1">
+            <img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-2-1672040129.jpg" alt="">    
+        </div>
+        <div id="poster1">
+            <img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-3-1669022420.jpg" alt="">    
+        </div>
+
+        <div id="footer">
+          <div>
+              <h3>Bewakoof</h3>
+          </div>
+      <div id="f1">        
+          <div>
+          <ul>CUSTOMER SERVICE
+              <li>Contact Us</li>
+              <li>Track Order</li>
+              <li>Return Order</li>
+              <li>Cancel Order</li>
+          </ul>
+      </div>Z
+      <div>
+                  <ul>COMPANY
+              <li>About Us</li>
+              <li>We are Hiring</li>
+              <li>Terms and condition</li>
+              <li>Privacy Policy</li>
+              <li>Blog</li>
+          </ul>
+      </div>
+      <div>
+          <ul>CONNECT WITH US
+              <li>Contact Us</li>
+              <li>Track Order</li>
+              <li>Return Order</li>
+              <li>Cancel Order</li>
+          </ul>
+      </div>
+      <div>
+          <ul>KEEP UP TO DATE
+              <li>
+             <input type="em" name="" placeholder="Enter Email Id" id="Email">
+             <button id="btn1">SUBSCRIBE</button>
+          </li>
+          </ul>
+      </div>
+      </div>
+      <div id="f2">
+          <h5><i class="fa-solid fa-arrow-rotate-left"></i>15 Days retun policy*</h5>
+          <h4>DOWNLOAD THE APP</h4>
+          <h4>100% SECURE PAYMENT</h4>
+          <h5><i class="fa-solid fa-indian-rupee-sign"></i>Cash on delivery</h5>
+          <div id="app">
+          <img src="https://images.bewakoof.com/web/app_android_v1.png" alt=""><img src="https://images.bewakoof.com/web/app_ios_v1.png" alt="">
+      </div><img src="https://images.bewakoof.com/web/secure-payments-image.png" alt="">
+      </div>
+      <hr>
+      <div id="f1">        
+          <div>
+          <ul>MEN'S CLOTHING
+              <li>Men's Hoodies & Sweatshirts</li>
+              <li>Men's Half T-shirts</li>
+              <li>Men's Full t-shirts</li>
+              <li>Men's Full Sweatshirts</li>
+              <li>Men's Hoodies & Sweatshirts</li>
+              <li>Men's Full t-shirts</li>
+              <li>Men's Half T-shirts</li>
+              <li>Men's Hoodies & Sweatshirts</li>
+              <li>Men's Half T-shirts</li>           
+              <li>Men's Hoodies & Sweatshirts</li>
+  
+          </ul>
+      </div>
+      <div>
+                  <ul>WOMEN'S CLOTHING
+              <li>About Us</li>
+              <li>We are Hiring</li>
+              <li>Terms and condition</li>
+              <li>Privacy Policy</li>
+              <li>Blog</li>
+          </ul>
+      </div>
+      <div>
+          <ul>MOBILE COVERS
+              <li>Contact Us</li>
+              <li>Track Order</li>
+              <li>Return Order</li>
+              <li>Cancel Order</li>
+          </ul>
+      </div>
+      <div>
+          <ul>FANBOOK
+              <li>
+             <h4>OFFERS</h4>
+             <h4>SITEMAP</h4>
+          </ul>
+      </div>
+      </div>
+      <div id="para">
+     <h4>BEWAKOOF THE NEW AGE ONLINE SHOPPING EXPERIENCE.</h4>
+     <p>  
+      Founded in 2012, Bewakoof is a lifestyle fashion brand that makes creative, distinctive fashion for the trendy, contemporary Indian. Bewakoof was created on the principle of creating impact through innovation, honesty and thoughtfulness.
+      
+      
+      With a team of 400 members, and 2mn products sold till date. We like to experiment freely, which allows us to balance creativity and relatability, and our innovative designs. Our range of products is always fresh and up-to-date, and we clock sales of over 1 lakh products a month. Our innovation focus extends to our operations as well. We are vertically integrated, manufacture our own products, and cut out the middleman wherever possible. This direct-to-consumer model allows us to create high-quality fashion at affordable prices. A thoughtful brand, we actively attempt to minimize our environmental footprint and maximize our social impact. These efforts are integrated right into our day-to-day operations, from rainwater harvesting to paper packaging to employee benefits. To create an accessible, affordable and thoughtful experience of online shopping in India.</p>
+  
+  <h4>BEWAKOOF.COM: THE QUIRKIEST ONLINE SHOPPING SITES OF ALL!</h4>
+  <p>Online fashion is definitely more accessible with Bewakoof.com. Explore the latest collections in Marvel t-shirts including avengers t-shirts and captain America t-shirts in official merchandise. Apart from these, quirkiest of T-shirts that you wont find on any online shopping sites in India are showcased at Bewakoof.com. If your wardrobe has been longing for a cool overhaul then bewakoof.com will certainly be your best bet amongst all online shopping sites. Also, take a tour of our bewakoof blog to stay abreast with the latest runway trends and be a trendsetter among your immediate circles. What we wear speaks volumes of us they say. But what if what you wore actually spoke what your mood was! Havent we all wondered where we could get those quirky t-shirts and sport them with confidence? Sure otherwise getting them made or even buying them from otherwise expensive online shopping sites for clothes may cost you substantially but with Bewakoof.com, you will understand that you do not have to spend a fortune on online fashion to look great. Sliders, joggers, sweatshirts, bag and bag packs and so much more are just some of the other items you can grab hold of here.
+  </p>
+  </div>
+  </div>
+
+    <script>
+        const carousel = document.querySelector("#carousel1");
+        let index = 0;
+        setInterval(() => {
+            index = (index + 1) % 2;
+            carousel.style.transform = `translateX(${index * -5}%)`;
+        }, 3000);
+
+        const carousel2 = document.querySelector("#carousel2");
+        let index2 = 0;
+        setInterval(() => {
+            index2 = (index2 + 1) % 2;
+            carousel2.style.transform = `translateX(${index2 * -5}%)`;
+        }, 3000);
+    </script>
+</body>
+</html>

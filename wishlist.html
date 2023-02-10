@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/wishlist.css">
+    
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <h2 id="wishlist-heading">WISH LIST</h2>
+
+    <div id="wishlist-container-return">
+        <div id="wishlist-container">
+        </div>
+
+
+        <!-- <div id="wishlist-product">
+            
+        </div> -->
+
+        <!-- <div id="wishlist-product">
+            <img src="https://image1s.bewakoof.com/t320/better-hero-full-sleeve-t-shirt-465236-1642576149-1.jpg" alt="">
+            <p id="name">Better Hero Full Sleeve I-Shirt</p>
+            <p id="wishlist-price">₹325<span>₹999</span><span>67% OFF</span></p>
+            <p>₹299 For Tribe Members</p>
+            <button>MOVE TO BAG</button>
+        </div> -->
+    </div>
+</body>
+
+</html>
+<script>
+var cart  = JSON.parse(localStorage.getItem("bewakoof_cart"))||[];
+
+    var wishlist_data = JSON.parse(localStorage.getItem("bewakoof_wishlist"));
+    console.log(wishlist_data);
+
+    display_wishlist_product(wishlist_data);
+
+    function display_wishlist_product(wishlist_data) {
+
+        document.getElementById("wishlist-container").innerHTML = "";
+
+        wishlist_data.map(function (elem, index) {
+            var wishlistContainer = document.getElementById("wishlist-container");
+            var wishlistProduct = document.createElement("div");
+            wishlistProduct.id = "wishlist-product";
+            // wishlistProduct.innerHTML=`
+
+            //         <img src=${elem.image1} alt="">
+            //         <p id="name">${elem.name}</p>
+            //         <p id="wishlist-price">₹${elem.subTotalPrice}<span>₹999</span><span>67% OFF</span></p>
+            //         <p id="wishlist-tribe">₹299 For Tribe Members</p>
+            //         <button>MOVE TO BAG</button>
+            //         <span class="wishlist-prod-close">&times;</span>
+
+            // `;
+
+//             {
+// //     "name": "Jet Black Round Neck 3/4th Sleeve T-Shirt",
+// //     "subTotalPrice": 999,
+// //     "mrpPrice": 1999,
+// //     "image1": "https://image1s.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg"
+// // }
+
+
+// {
+//     "id": "j4",
+//     "name": "Black Plus Size Puffer",
+//     "price": "3649",
+//     "image11": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433427-1.jpg",
+//     "image12": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433431-2.jpg",
+//     "image13": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433435-3.jpg",
+//     "image14": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433439-4.jpg",
+//     "image15": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433443-5.jpg",
+//     "desc": "Flaunt your hot sassy looks in this Black Mens Plus Size Puffer Jacket. Be upbeat, match this puffer jacket with funky bag, trousers and some warm comfy boots and level up your style game.",
+//     "tribe": "100",
+//     "discount": "64"
+// }
+
+
+var subTotalPrice = Math.floor(Number(elem.price) - (Number(elem.discount)/100)*elem.price);
+
+            var img = document.createElement("img");
+            var p1 = document.createElement("p");
+            var p2 = document.createElement("p");
+            var span1 = document.createElement("span");
+            var span2 = document.createElement("span");
+            var p3 = document.createElement("p");
+            var btn = document.createElement("button");
+            var span3 = document.createElement("span");
+
+            img.src = elem.image1;
+            p1.textContent = elem.name;
+            p1.id = "name";
+            p2.innerHTML = `${subTotalPrice}<span>${elem.price}</span><span>${elem.discount}% OFF</span>`;
+            p2.id = "wishlist-price";
+            p3.textContent = `₹${elem.tribe} For Tribe Members`;
+            p3.id = "wishlist-tribe";
+            btn.innerHTML = 'MOVE TO BAG';
+            btn.addEventListener("click", ()=>{
+                cart.push(elem);
+                localStorage.setItem("bewakoof_cart", JSON.stringify(cart));
+                moveToBag(index);
+            })
+            span3.innerHTML = "&times;";
+            span3.className = "wishlist-prod-close";
+
+            wishlistProduct.append(img, p1, p2, p3, btn, span3);
+
+            wishlistContainer.append(wishlistProduct);
+
+            span3.addEventListener("click", function () {
+                console.log("here", index);
+
+                wishlist_data.splice(index, 1);
+                console.log(wishlist_data);
+                localStorage.setItem("bewakoof_wishlist", JSON.stringify(wishlist_data));
+
+                display_wishlist_product(wishlist_data);
+
+            })
+
+        })
+
+    };
+
+    function moveToBag(index){
+        wishlist_data.splice(index, 1);
+        localStorage.setItem("bewakoof_wishlist", JSON.stringify(wishlist_data));
+        display_wishlist_product(wishlist_data);
+    }
+
+
+
+
+
+
+</script>

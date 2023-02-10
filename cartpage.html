@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/wishlistcart.css">
+    <style>
+        body {
+            font-family: "montserrat", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .truckmove {
+            width: 100px;
+            height: 100px;
+
+            position: relative;
+            animation: mymove 9s;
+        }
+
+        @keyframes mymove {
+            from {
+                left: 0px;
+            }
+
+            to {
+                left: 167%;
+            }
+
+        }
+
+        #cart-head-const {
+            border: 1px solid gray;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            font-family: sans-serif;
+            justify-content: space-between;
+            
+        }
+        #cart-head-const>span{
+            margin-right: 10%;
+        }
+        #cart-head-const>span>p{
+            font-size: 15px;
+            color:grey;
+            
+        }
+
+        #cart-head-const img {
+
+            margin-left: 200px;
+
+
+        }
+
+        #cart-shown-images {
+
+            height: auto;
+
+            width: 75%;
+            margin: 40px auto;
+            display: flex;
+
+
+        }
+
+        #total-items-cart {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 16px;
+
+
+            margin-left: 200px;
+            margin-top: 40px;
+        }
+
+        #cart-shown-images>div {
+
+            margin: 10px;
+
+
+
+
+
+        }
+
+        #cart-shown-left {
+            flex: 3;
+        }
+
+        #cart-shown-right {
+            flex: 2;
+
+        }
+
+        .offer-div {
+
+            height: 50px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+
+        }
+
+        #left-offer-color {
+            background-color: lightyellow;
+        }
+
+        #offer-div {
+            background-color: orange;
+            border-radius: 5px;
+        }
+
+
+        .referal-redeem {
+
+
+            display: grid;
+            align-items: center;
+            margin-top: 10px;
+
+            height: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+
+        }
+
+
+        .referal-redeem>div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+
+            height: 40px;
+
+        }
+
+        .referal-redeem>div {
+
+            height: 30px;
+            background-color: paleturquoise;
+            border-radius: 3px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+        }
+
+        #price-summary {
+
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0px;
+            border-bottom: none;
+
+
+        }
+
+        #price-summary p {
+            margin: 8px;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+        #Total-amount-address {
+            display: flex;
+            border: 1px solid grey;
+            height: 60px;
+            justify-content: space-between;
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: center;
+            border-bottom: none;
+            border-right: none;
+            border-left: none;
+
+        }
+
+        #cont-price-summ {
+            height: 30px;
+            background-color: lightgray;
+            margin-bottom: 0px;
+
+        }
+
+        #saving-div {
+            border: 1px solid grey;
+            border-radius: 50px;
+            background-color: lightgrey;
+            height: 30px;
+
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #adress-payment-btn {
+
+
+            background-color: teal;
+            color: white;
+            height: 50px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #grey-border {
+            border: 1px solid grey;
+            height: 40px;
+            margin-left: 0px;
+
+
+        }
+
+        #cart-push-prdt {
+
+            height: 230px;
+            border-radius: 3px;
+            padding: 20px;
+            border: 1px solid gray;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        #cart-push-prdt hr {
+
+            margin-top: 30px;
+            border: 0.01px solid rgb(220, 228, 236);
+        }
+
+        #cart-push-prdt #cart-img {
+            height: 100%;
+            width: 30%;
+            display: flex;
+
+            justify-content: flex-end;
+        }
+
+        #cart-push-prdt #cart-img img {
+            height: 80%;
+            margin-top: 15px;
+            border-radius: 5px;
+
+        }
+
+        #cart-descr-img {
+            display: flex;
+
+            height: 70%;
+
+
+
+        }
+
+        #cart-descr-img>div {
+
+
+            flex: 1;
+            height: 100%;
+            width: 50%;
+        }
+
+        #remove-wishlist {
+            display: flex;
+            align-items: center;
+
+            height: 30%;
+            padding-left: 80px;
+
+
+        }
+
+        #remove-wishlist>div {
+
+            flex: 1;
+            align-items: center;
+        }
+
+        #size-qty {
+            display: flex;
+
+
+
+        }
+
+        #size-qty>div {
+            width: 70px;
+            height: 30px;
+            margin: 30px;
+
+
+        }
+
+        #size-qty>div select {
+            width: 70px;
+            height: 30px;
+            border-radius: 4px;
+
+
+        }
+
+        #cart-descr p {
+            margin: 10px;
+        }
+
+        .green-color {
+            color: green;
+        }
+
+        #cart-shown-left {
+
+            height: auto;
+        }
+
+        #payment_secure {
+            margin: auto;
+
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        #payment_secure img {
+            margin: auto;
+
+            width: 250px;
+
+        }
+
+        #cart-append-change {
+
+            height: auto;
+        }
+
+        #cart-dom-clear {
+
+            height: auto;
+            margin-bottom: 30px;
+
+        }
+
+        #border-grey {
+            border: 1px solid gray;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visbility 0s opacity 0.5s;
+        }
+
+        .bg-active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .overlay-content {
+            position: relative;
+            background-color: white;
+            width: 25%;
+            height: 40%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 50px 40px;
+            box-sizing: border-box;
+
+        }
+
+        .overlay-content input {
+
+            border: none;
+            border-bottom: 3px solid teal;
+            outline: none;
+            padding: 20px 0;
+        }
+
+        .overlay-content button {
+            height: 50px;
+            background-color: teal;
+            color: white;
+            border: none;
+
+
+        }
+
+        .coupoun-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+
+
+        #actual-price {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #mrp-price {
+            margin-left: 10px;
+            color: gray;
+            text-decoration: line-through;
+            font-size: 15px;
+            font-weight: normal;
+
+        }
+
+        .total-adress-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visbility 0s opacity 0.5s;
+
+
+
+
+        }
+
+        .adress-overlay {
+
+
+
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            margin: auto;
+
+            padding: 1% 2%;
+            box-sizing: border-box;
+            background-color: white;
+            flex-direction: column;
+
+
+
+
+        }
+
+        .address-active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .adress-overlay input {
+
+            margin: auto;
+            width: 90%;
+            height: 5%;
+            padding: 1%;
+
+
+        }
+
+        .Save-address-flex {
+            width: 50%;
+
+            margin-left: 4%;
+
+
+        }
+
+        .Save-address-flex p {
+            color: gray;
+            font-size: 15px;
+            margin-bottom: 4px;
+
+        }
+
+        .Save-address-flex button {
+
+            width: 20%;
+            padding: 7px 3px;
+            border: 1px solid gray;
+            border-radius: 50px;
+            margin: 2px 2px;
+            background-color: white;
+            color: gray;
+
+        }
+
+        .saveaddress-cancel {
+
+            width: 80%;
+            margin: auto;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+
+        .saveaddress-cancel button:nth-child(1) {
+
+            width: 49%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: teal;
+            color: white;
+            border: none;
+
+        }
+
+        .saveaddress-cancel button:nth-child(2) {
+
+            width: 49%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: white;
+            color: gray;
+            border: 1px solid teal;
+
+        }
+
+        #city-district {
+            width: 94%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+
+
+        }
+
+        #city-district>input {
+            height: 40px;
+            width: 45%;
+            border-radius: 5px;
+            border: 1px solid gray;
+
+
+
+
+        }
+
+        #adress-close {
+
+            height: 30px;
+            width: 30px;
+            font-size: 30px;
+            color: gray;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="overlay">
+        <div class="overlay-content">
+            <p>Have a Coupon / Gift Card?</p>
+            <input type="text" id="coupoun-text" placeholder="Enter code">
+            <button id="coupoun-submit">APPLY</button>
+            <span class="coupoun-close">&times;</span>
+        </div>
+    </div>
+
+    <!-- adress page start -->
+
+    <!-- <form id="btn-address-save"> -->
+    <div class="total-adress-page" class="overlay">
+
+        <div class="adress-overlay">
+
+
+            <h2>Add New Address</h2>
+            <input type="text" placeholder="Fullname" class="address-fullname"></input>
+            <input type="text" placeholder="Mobile number" class="address-mobilenumber"></input>
+            <input type="pincode" placeholder="Pincode" class="address-pincode"></input>
+            <div id="city-district">
+                <input type="text" placeholder="City/District" class="address-city-district"></input>
+                <input type="text" placeholder="State" class="address-state"></input>
+            </div>
+            <input type="text" placeholder="Flatno/Building,Street name" class="address-flatno"></input>
+            <input type="text" placeholder="Area/Locality" class="address-area"></input>
+            <input type="text" placeholder="Landmark(optional)" class="address-landmark"></input>
+            <div class="Save-address-flex">
+                <p>Save Address As</p>
+                <button onclick="home_button()">Home</button>
+                <button onclick="office_button()">Office</button>
+                <button onclick="other_button()">Other</button>
+            </div>
+            <div class="saveaddress-cancel">
+                <button type="submit" id="btn-address-save">SAVE ADDRESS</button>
+                <button>CANCEL</button>
+            </div>
+            <span id="adress-close">&times</span>
+
+        </div>
+
+
+    </div>
+    <!-- </form> -->
+
+
+
+
+
+    <div id="cartpage-total-div">
+
+        <div id="cart-head-const">
+            <a href="./index.html"><img src="https://images.bewakoof.com/web/bewakoof-primary-logo-white-bg-2x-1635745564.png" height="25px"></a> 
+            <span>Signed as:<p id="logedin-email"></p></span>
+        </div>
+
+        <p id="total-items-cart">My Bag 0 item(s)</p>
+        <div id="cart-append-change">
+            <div id="cart-shown-images">
+
+
+
+
+                <div id="cart-shown-left">
+
+                    <div class="offer-div" id="left-offer-color">
+
+                        <p> <span><img class="truckmove" src="https://images.bewakoof.com/web/Red-truck.png" alt="truck"
+                                    style="width: 19px; height: 12px; animation-duration: 2s;"></span>Yay! You get FREE
+                            delivery on this order</p>
+
+                    </div>
+                    <div id="cart-dom-clear">
+
+                        <div id="cart-push-prdt">
+
+                            <div id="cart-descr-img">
+                                <div id="cart-descr">
+                                    <p>Know Your Power Boyfriend T-Shirt</p>
+                                    <p id="actual_price">₹275 <span id="mrp-price"></span></p>
+                                    <div>
+                                        <p class="green-color">You saved ₹<span id="saved-amt">526</span>!</p>
+                                    </div>
+
+                                    <div id="size-qty">
+                                        <div id="size">
+                                            <!-- select start  -->
+                                            <select id="select-value">
+                                                <option>size:</option>
+                                                <option>Xs</option>
+                                                <option>S</option>
+                                                <option>M</option>
+
+                                                <option>L</option>
+
+                                                <option>XL</option>
+                                                <option>2XL</option>
+                                                <option>7</option>
+                                                <option>3XL</option>
+
+
+
+                                            </select>
+                                            <!-- select end  -->
+                                        </div>
+                                        <div id="qty">
+                                            <!-- qty start  -->
+                                            <select>
+                                                <option>quantity:</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+
+                                                <option>4</option>
+
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+
+                                                <option>9</option>
+
+                                                <option>10</option>
+
+                                            </select>
+                                            <!-- qty end  -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="cart-img">
+                                    <img
+                                        src="https://images.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg">
+                                </div>
+                            </div>
+                            <!-- cart-desc-img-end -->
+                            <hr>
+                            <div id="remove-wishlist">
+
+                                <div>Remove</div>
+
+                                <div>Move to Wishlist</div>
+                            </div>
+
+                        </div>
+                        <!-- cart-push-prdt end -->
+                    </div>
+
+                    <div id="wishlist-container"></div>
+
+
+                </div>
+                <div id="cart-shown-right">
+
+                    <div class="offer-div" id="offer-div">
+                        <p>Save extra ₹52 with TriBe</p>
+
+                    </div>
+                    <div class="offer-div" id="grey-border">
+                        <p>Get Rs.100 instant discount on your First Purchase above Rs.499. Coupon code
+                            - NEW100</p>
+                    </div>
+                    <div id="border-grey">
+                        <div class="referal-redeem">
+                            <div>
+                                <div id="Coupon-btn">
+
+                                    Have a Coupon / Referral / Gift Card ?</div>
+                                <div>Redeem >></div>
+                            </div>
+
+
+                        </div>
+                        <div>
+
+                            <div id="cont-price-summ" class="offer-div">PRICE SUMMARY</div>
+                            <div id="price-summary">
+                                <div>
+                                    <p>Total MRP (Incl. of taxes)</p>
+                                    <p>Delivery Fee </p>
+                                    <p>Bag Discount </p>
+                                    <p>Subtotal </p>
+                                </div>
+                                <div>
+                                    <p class="total_calculate_price">null</p>
+                                    <p>FREE</p>
+                                    <p class="bag-discount">0</p>
+                                    <p class="Subtotal"></p>
+                                </div>
+
+                            </div>
+                            <div class="offer-div" id="saving-div">You are saving ₹52 on this order</div>
+                            <div id="Total-amount-address">
+                                <div>
+                                    <p>Total</p>
+                                    <p class="Grand-total-pay">0</p>
+                                </div>
+                                <div>
+                                    <button id="adress-payment-btn">ADD ADDRESS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div id="payment_secure">
+                <img src="https://images.bewakoof.com/web/secure-payments-image.png">
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+     var bag_discounted_amount = 0;
+     var sub_total_price = 0;
+     var total_price = 0;
+
+    var p = document.querySelector("#select-value");
+    console.log(p)
+
+
+    var obj = [
+        {
+            desc: "Jet Black Round Neck 3/4th Sleeve T-Shirt",
+            subTotalPrice: 999,
+            price: 1999,
+            image: "https://images.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg",
+        },
+        {
+
+            desc: "na patta chucdu na patta chudu nattu nattu ",
+            subTotalPrice: 500,
+            price: 1500,
+            image: "https://images.bewakoof.com/t320/bunny-rabbit-pocket-round-neck-3-4-sleeves-t-shirts-women-s-printed-round-neck-3-4-sleeve-t-shirts-354975-1621409080.jpg",
+        },
+        {
+
+            desc: "na patta chucdu na patta chudu nattu nattu ",
+            subTotalPrice: 200,
+            price: 799,
+            image: "https://images.bewakoof.com/t540/jet-black-round-neck-3-4th-sleeve-t-shirt-105769-1637995851-1.jpg",
+        },
+
+        {
+            desc: "Jet Black Round Neck 3/4th Sleeve T-Shirt",
+            subTotalPrice: 199,
+            price: 788,
+            image: "https://images.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg",
+        },
+        {
+
+            desc: "na patta chucdu na patta chudu nattu nattu ",
+            subTotalPrice: 1999,
+            price: 2999,
+            image: "https://images.bewakoof.com/t320/bunny-rabbit-pocket-round-neck-3-4-sleeves-t-shirts-women-s-printed-round-neck-3-4-sleeve-t-shirts-354975-1621409080.jpg",
+        },
+        {
+
+            desc: "na patta chucdu na patta chudu nattu nattu ",
+            subTotalPrice: 699,
+            price: 999,
+            image: "https://images.bewakoof.com/t540/jet-black-round-neck-3-4th-sleeve-t-shirt-105769-1637995851-1.jpg",
+        },
+
+    ]
+
+
+
+
+    var total_calculate_price;
+
+    var array = JSON.parse(localStorage.getItem("bewakoof_cart")) || [];
+    console.log(array)
+
+    var saved_amount_array;
+    var price_summary;
+
+    display_cart(array)
+    function display_cart(array) {
+
+        document.querySelector("#cart-dom-clear").innerHTML = "";
+
+        console.log(array)
+        saved_amount_array = [];
+
+        price_summary = {};
+
+
+
+
+        array.map((n, index) => {
+
+
+
+
+
+
+var subTotalPrice = Math.floor(Number(n.price) - (Number(n.discount)/100)*n.price);
+
+            var { name, image1, price } = n;
+            var totaldiv = document.createElement("div")
+            totaldiv.id = "cart-push-prdt"
+            var cart_desc_div_img = document.createElement("div");
+            cart_desc_div_img.id = "cart-descr-img"
+            var cart_descr = document.createElement("div");
+            cart_descr.id = "cart-descr";
+            var cart_img = document.createElement("div");
+            cart_img.id = "cart-img";
+
+            var image1 = document.createElement("img");
+            image1.src = n.image1;
+
+            cart_img.append(image1)
+            var p1 = document.createElement("p");
+
+            p1.textContent = name;
+
+            var p2 = document.createElement("p");
+            p2.id = "actual-price";
+            p2.textContent = "₹" + subTotalPrice;
+
+            var mrp_span = document.createElement("span");
+            mrp_span.id = "mrp-price";
+            mrp_span.textContent = "₹" + price;
+
+            p2.textContent = "₹" + subTotalPrice;
+            p2.append(mrp_span)
+
+
+            var green_div = document.createElement("div");
+            var green_p = document.createElement("p");
+            green_p.textContent = `You saved ₹${price - subTotalPrice}!`;
+
+            saved_amount_array.push(price - subTotalPrice);
+
+            green_p.className = "green-color"
+            green_div.append(green_p)
+            var size_qty = document.createElement("div");
+            size_qty.id = "size-qty";
+            var select_qty_div = document.createElement("div");
+            var select_size_div = document.createElement("div")
+            var select_qty = document.createElement("select");
+
+            select_qty.addEventListener("change", selected_qty_value)
+
+            function selected_qty_value() {
+
+                console.log(index)
+            }
+
+            var option_qty = document.createElement("option")
+
+            option_qty.textContent = "Qty:"
+            var option1_qty = document.createElement("option");
+
+            var option2_qty = document.createElement("option");
+
+
+            var option3_qty = document.createElement("option")
+            var option4_qty = document.createElement("option")
+            var option5_qty = document.createElement("option")
+            var option6_qty = document.createElement("option")
+            var option7_qty = document.createElement("option")
+            var option8_qty = document.createElement("option")
+            var option9_qty = document.createElement("option")
+            var option10_qty = document.createElement("option")
+
+            option1_qty.textContent = 1;
+            option2_qty.textContent = 2;
+            option3_qty.textContent = 3;
+            option4_qty.textContent = 4;
+            option5_qty.textContent = 5;
+            option6_qty.textContent = 6;
+            option7_qty.textContent = 7;
+            option8_qty.textContent = 8;
+            option9_qty.textContent = 9;
+            option10_qty.textContent = 10;
+
+
+
+            select_qty.append(option_qty, option1_qty, option2_qty, option3_qty, option4_qty, option5_qty, option6_qty, option7_qty, option8_qty, option9_qty, option10_qty)
+
+
+            var select_size = document.createElement("select");
+
+            var option1_size = document.createElement("option");
+
+            var option2_size = document.createElement("option");
+
+
+            var option3_size = document.createElement("option")
+            var option4_size = document.createElement("option")
+            var option5_size = document.createElement("option")
+            var option6_size = document.createElement("option")
+            var option7_size = document.createElement("option")
+            var option8_size = document.createElement("option")
+            var option9_size = document.createElement("option")
+            var option10_size = document.createElement("option")
+
+
+            var option_size = document.createElement("option")
+            option_size.textContent = "Size:"
+
+            option1_size.textContent = "XS";
+            option2_size.textContent = "S";
+            option3_size.textContent = "M";
+            option4_size.textContent = "L";
+            option5_size.textContent = "XL";
+            option6_size.textContent = "2XL";
+            option7_size.textContent = "3XL";
+
+
+
+
+            select_size.append(option_size, option1_size, option2_size, option3_size, option4_size, option5_size, option6_size, option7_size)
+
+            select_qty_div.append(select_qty)
+            select_size_div.append(select_size)
+
+
+            size_qty.append(select_qty_div, select_size_div)
+
+            cart_descr.append(p1, p2, green_div, size_qty)
+            var remove_wishlist = document.createElement("div");
+            remove_wishlist.id = "remove-wishlist";
+
+            var remove = document.createElement("div");
+            remove.textContent = "Remove";
+
+            remove.addEventListener("click", deleterow)
+
+            function deleterow() {
+
+                console.log("yes")
+                array.splice(index, 1)
+
+                localStorage.setItem("bewakoof_cart", JSON.stringify(array))
+                display_cart(array)
+            }
+
+            var wishlist = document.createElement("div");
+            wishlist.textContent = "Move to Wishlist"
+            cart_desc_div_img.append(cart_descr, cart_img)
+            remove_wishlist.append(remove, wishlist)
+            var x = document.createElement("HR");
+            totaldiv.append(cart_desc_div_img, x, remove_wishlist)
+            console.log(totaldiv)
+            document.querySelector("#cart-dom-clear").append(totaldiv)
+
+            console.log(index)
+            document.querySelector("#total-items-cart").textContent = `My Bag ${index + 1} items(s)`
+
+        })
+
+
+
+        // var total_price = array.reduce(function (a, b) {
+        //     return { subTotalPrice: a.subTotalPrice + b.subTotalPrice };
+        // })
+        // console.log("total", total_price)
+
+        // var total_price = array.reduce(function (a, b) {
+        //     return { price: a.price + b.price };
+        // })
+        // console.log(total_price);
+array.map((el)=>{
+var subTotalPrice = Math.floor(Number(el.price) - (Number(el.discount)/100)*el.price);
+sub_total_price += subTotalPrice;
+total_price += Number(el.price);
+})
+
+console.log(total_price, 5541)
+
+
+        bag_discounted_amount = saved_amount_array.reduce((m, n) => {
+            return m + n;
+        })
+
+
+
+        document.querySelector("#saving-div").textContent = `You are saving ₹${bag_discounted_amount} on this order`
+
+        document.querySelector(".bag-discount").textContent = "₹" + bag_discounted_amount;
+        console.log("bag", bag_discounted_amount)
+
+
+        price_summary = {
+            price: sub_total_price,
+            bag_discount: bag_discounted_amount,
+            total: total_price,
+        }
+
+        console.log(price_summary);
+
+
+
+        localStorage.setItem("order_summary_data", JSON.stringify(price_summary))
+
+        document.querySelector(".total_calculate_price").textContent = "₹" + total_price;
+        // total_calculate_price = total_price.subTotalPrice;
+
+        document.querySelector(".Subtotal").textContent = "₹" + (sub_total_price);
+        document.querySelector(".Grand-total-pay").textContent = "₹" + (sub_total_price);
+        // we have to modify tribe value
+
+        document.querySelector("#Coupon-btn").addEventListener("click", coupountoogle)
+
+        function coupountoogle() {
+            console.log("yes")
+            document.querySelector(".overlay").classList.toggle('bg-active')
+        }
+    }
+
+    document.querySelector(".coupoun-close").addEventListener("click", coupountoogles)
+    function coupountoogles() {
+        console.log("yes")
+        document.querySelector(".overlay").classList.toggle('bg-active')
+    }
+
+
+
+
+
+
+    document.querySelector("#coupoun-submit").addEventListener("click", coupountoogless)
+
+var flag = false;
+localStorage.setItem("flag", JSON.stringify(flag));
+
+    function coupountoogless() {
+        var x = document.querySelector("#coupoun-text").value;
+        console.log(x)
+
+        if (x == "NEW100") {
+
+            flag = true;
+            localStorage.setItem("flag", JSON.stringify(flag));
+        //     price_summary = {
+        //     price: sub_total_price,
+        //     bag_discount: bag_discounted_amount,
+        //     total: total_price,
+        // }
+
+
+
+        // <div>
+        //                             <p class="total_calculate_price">null</p>
+        //                             <p>FREE</p>
+        //                             <p class="bag-discount">0</p>
+        //                             <p class="Subtotal"></p>
+        //                         </div>
+
+            document.querySelector(".bag-discount").textContent ="₹ "+ (bag_discounted_amount + 100);
+            document.querySelector(".Subtotal").textContent = "₹" + (total_price-bag_discounted_amount-100);
+
+            document.querySelector("#saving-div").textContent = `You are saving ₹ ${bag_discounted_amount} on this order`
+
+            document.querySelector(".Grand-total-pay").textContent = "₹" + (total_price-bag_discounted_amount-100);
+            document.querySelector(".overlay").classList.remove('bg-active');
+            
+        }
+        else {
+            alert("invalid coupoun")
+        }
+
+
+    }
+
+    console.log(saved_amount_array)
+    // var bag_discounted_amount = saved_amount_array.reduce((m, n) => {
+    //     return m + n;
+    // })
+
+    // document.querySelector(".bag-discount").textContent = "₹" + bag_discounted_amount;
+    // console.log(bag_discounted_amount)
+
+
+
+
+
+
+    document.querySelector("#adress-payment-btn").addEventListener("click", address_visible)
+
+    function address_visible() {
+
+        document.querySelector(".total-adress-page").classList.toggle("address-active")
+
+
+
+    }
+    document.querySelector("#adress-close").addEventListener("click", function () {
+        document.querySelector(".total-adress-page").classList.toggle("address-active")
+    })
+
+
+
+    // wishlist script
+
+    var obj = [
+        {
+            desc: "Jet Black Round Neck 3/4th Sleeve T-Shirt",
+            subTotalPrice: 999,
+            price: 1999,
+            image1: "https://image1s.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg",
+        },
+        {
+
+            desc: "na patta chucdu na patta chudu nattu nattu ",
+            subTotalPrice: 500,
+            price: 1500,
+            image1: "https://image1s.bewakoof.com/t320/bunny-rabbit-pocket-round-neck-3-4-sleeves-t-shirts-women-s-printed-round-neck-3-4-sleeve-t-shirts-354975-1621409080.jpg",
+        },
+        {
+
+            desc: "na patta chucdu na patta chudu nattu nattu ",
+            subTotalPrice: 200,
+            price: 799,
+            image1: "https://image1s.bewakoof.com/t540/jet-black-round-neck-3-4th-sleeve-t-shirt-105769-1637995851-1.jpg",
+        },
+
+        {
+            desc: "Jet Black Round Neck 3/4th Sleeve T-Shirt",
+            subTotalPrice: 199,
+            price: 788,
+            image1: "https://image1s.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg",
+        },
+        {
+
+            desc: "na patta chucdu na patta chudu nattu nattu ",
+            subTotalPrice: 1999,
+            price: 2999,
+            image1: "https://image1s.bewakoof.com/t320/bunny-rabbit-pocket-round-neck-3-4-sleeves-t-shirts-women-s-printed-round-neck-3-4-sleeve-t-shirts-354975-1621409080.jpg",
+        },
+        {
+
+            desc: "na patta chucdu na patta chudu nattu nattu ",
+            subTotalPrice: 699,
+            price: 999,
+            image1: "https://image1s.bewakoof.com/t540/jet-black-round-neck-3-4th-sleeve-t-shirt-105769-1637995851-1.jpg",
+        },
+
+    ]
+
+
+// //  {
+//     desc: "Jet Black Round Neck 3/4th Sleeve T-Shirt",
+//             subTotalPrice: 999,
+//             price: 1999,
+//             image: "https://images.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg",
+//         }
+
+
+// {
+//     "id": "HST8",
+//     "name": "Gotham City Half Sleeve T-shirt",
+//     "price": "799",
+//     "image1": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536986-1.jpg",
+//     "image2": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536989-2.jpg",
+//     "image3": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536993-3.jpg",
+//     "image4": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536986-1.jpg",
+//     "image5": "https://images.bewakoof.com/t540/gotham-city-half-sleeve-t-shirt-463719-1641536989-2.jpg",
+//     "desc": "Regular fit - Fits just right - not too tight, not too loose.Single Jersey, 100% Cotton Classic, lightweight jersey fabric comprising 100% cotton.",
+//     "tribe": " ₹50",
+//     "discount": "50"
+// }
+
+
+    // localStorage.setItem("bewkoof_wishlist", JSON.stringify(obj));
+
+    var wishlist_data = JSON.parse(localStorage.getItem("bewakoof_wishlist"));
+    console.log(wishlist_data);
+
+    display_wishlist_product(wishlist_data);
+
+
+    function display_wishlist_product() {
+
+        document.getElementById("wishlist-container").innerHTML = "";
+
+        wishlist_data.map(function (elem, index) {
+            var wishlistContainer = document.getElementById("wishlist-container");
+            var wishlistProduct = document.createElement("div");
+            wishlistProduct.id = "wishlist-product";
+            var subTotalPrice =  Math.floor(Number(elem.price) - (Number(elem.discount)/100)*elem.price);
+            // wishlistProduct.innerHTML=`
+
+            //         <img src=${elem.image1} alt="">
+            //         <p id="name">${elem.desc}</p>
+            //         <p id="wishlist-price">₹${elem.subTotalPrice}<span>₹999</span><span>67% OFF</span></p>
+            //         <p id="wishlist-tribe">₹299 For Tribe Members</p>
+            //         <button>MOVE TO BAG</button>
+            //         <span class="wishlist-prod-close">&times;</span>
+
+            // `;
+
+            var img = document.createElement("img");
+            var p1 = document.createElement("p");
+            var p2 = document.createElement("p");
+            var span1 = document.createElement("span");
+            var span2 = document.createElement("span");
+            var p3 = document.createElement("p");
+            var btn = document.createElement("button");
+            var span3 = document.createElement("span");
+
+            img.src = elem.image1;
+            p1.textContent = elem.desc;
+            p1.id = "name";
+            p2.innerHTML = `₹ ${subTotalPrice}<span>₹ ${elem.price}</span><span>${elem.discount}% OFF</span>`;
+            p2.id = "wishlist-price";
+            p3.textContent = `${elem.tribe} For Tribe Members`;
+            p3.id = "wishlist-tribe";
+            btn.innerHTML = 'MOVE TO BAG';
+            span3.innerHTML = "&times;";
+            span3.className = "wishlist-prod-close";
+
+            wishlistProduct.append(img, p1, p2, p3, btn, span3);
+
+            wishlistContainer.append(wishlistProduct);
+
+            span3.addEventListener("click", function () {
+                console.log("here", index);
+
+                wishlist_data.splice(index, 1);
+                console.log(wishlist_data);
+                localStorage.setItem("bewakoof_wishlist", JSON.stringify(wishlist_data));
+
+                display_wishlist_product(wishlist_data);
+
+            })
+
+        })
+
+    };
+
+
+    // document.querySelector("#btn-address-save").addEventListener("click", function () {
+
+    //     //     address-fullname
+    //     // address-mobilenumber
+    //     // address-pincode
+    //     // address-city-district
+    //     // address-state
+    //     // address-flatno
+    //     // address-area
+    //     // address-landmark
+
+    //     var obj = [{
+    //         fullname: document.querySelector(".address-fullname").value,
+    //         mobilenumber: document.querySelector(".address-mobilenumber").value,
+    //         pincode: document.querySelector(".address-pincode").value,
+    //         city_district: document.querySelector(".address-city-district").value,
+    //         state: document.querySelector(".address-state").value,
+    //         flatno: document.querySelector(".address-flatno").value,
+    //         area: document.querySelector(".address-area").value,
+    //         landmark: document.querySelector(".address-landmark").value,
+
+
+    //     }];
+
+
+    //     localStorage.setItem("myaddress_data", JSON.stringify(obj))
+    //     console.log(obj)
+    //     window.location.href = "ordersummary.html"
+
+
+    // })
+
+    document.querySelector("#btn-address-save").addEventListener("click", function () {
+        //     address-fullname
+        // address-mobilenumber
+        // address-pincode
+        // address-city-district
+        // address-state
+        // address-flatno
+        // address-area
+        // address-landmark
+        var obj = [{
+            fullname: document.querySelector(".address-fullname").value,
+            mobilenumber: document.querySelector(".address-mobilenumber").value,
+            pincode: document.querySelector(".address-pincode").value,
+            city_district: document.querySelector(".address-city-district").value,
+            state: document.querySelector(".address-state").value,
+            flatno: document.querySelector(".address-flatno").value,
+            area: document.querySelector(".address-area").value,
+            landmark: document.querySelector(".address-landmark").value,
+        }];
+
+        localStorage.setItem("myaddress_data", JSON.stringify(obj))
+        console.log(obj)
+        window.location.href = "./ordersummary.html"
+    })
+
+    function home_button(){
+            localStorage.setItem("address_location", JSON.stringify("HOME"));
+        }    
+        
+    function office_button(){
+            localStorage.setItem("address_location", JSON.stringify("OFFICE"));
+        }    
+        
+    function others_button(){
+            localStorage.setItem("address_location", JSON.stringify("OTHER"));
+        } 
+        
+        
+        var customer_data = JSON.parse(localStorage.getItem("customer_whole_data"));
+        var email = customer_data.email_input;
+
+        document.getElementById("logedin-email").textContent = email;
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // we have to modify tribe value line- 796 -->

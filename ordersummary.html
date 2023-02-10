@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            background-color: rgba(139, 133, 133, 0);
+        }
+
+        #summary-head-const {
+            border: 0.01px solid rgb(206, 203, 203);
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            font-family: sans-serif;
+
+
+        }
+
+        #summary-head-const img {
+
+            margin-left: 200px;
+
+
+        }
+
+        #summary-items {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 16px;
+
+
+            margin-left: 200px;
+            margin-top: 40px;
+        }
+
+        #summary-shown-details {
+            height: 100vh;
+
+            width: 75%;
+            margin: 40px auto;
+            display: flex;
+
+
+        }
+
+        #summary-shown-details>div {
+
+            margin: 10px;
+
+
+
+
+
+        }
+
+        #summary-shown-left {
+            flex: 3;
+            border: 0.01px solid rgb(206, 203, 203);
+            height: 260px;
+            border-radius: 3px;
+
+
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+
+        }
+
+        #summary-shown-right {
+            flex: 2;
+            border: 0.01px solid rgb(206, 203, 203);
+            height: 300px;
+
+        }
+
+        #summary-push-prdt {}
+
+        .delivery-price-estimated-color {
+
+            padding: 0px;
+
+            align-items: center;
+            display: flex;
+            padding-left: 20px;
+            background: rgba(0, 0, 0, .04);
+            padding: 13px 20px;
+        }
+
+        #delivery-details {
+
+            width: 50%;
+            padding: 20px;
+
+        }
+
+        #delivery-details p,
+        button {
+
+            margin: 8px;
+
+        }
+
+        #delivery-details button {
+
+            width: 80%;
+            height: 45px;
+
+            border-radius: 5px;
+            color: #42a2a2;
+            font-size: 14px;
+            font-family: montserrat, sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            margin-top: 15px;
+            background: transparent;
+            border: 1px solid #42a2a2;
+
+        }
+
+        #delivery-details h4 .other_span {
+            border: 0.01px solid rgb(206, 203, 203);
+            border-radius: 50px;
+            margin-left: 30px;
+            background-color: rgba(0, 0, 0, .04);
+            padding: 2px 10px;
+            text-transform: uppercase;
+            color: gray;
+            font-family: montserrat;
+        }
+
+        #delivery-details p span {
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        #price-summary {
+
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0px;
+            border-bottom: none;
+
+
+        }
+
+        #price-summary p {
+            margin: 8px;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+
+        #saving-div {
+            border: 1px solid grey;
+            border-radius: 50px;
+            background-color: lightgrey;
+            height: 30px;
+
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(29, 136, 2, 0.1);
+            color: rgb(29, 136, 2);
+
+
+        }
+
+        #adress-payment-btn {
+
+
+            background-color: teal;
+            color: white;
+            height: 50px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #Total-amount-address {
+            display: flex;
+            border: 0.01px solid rgb(206, 203, 203);
+            height: 60px;
+            justify-content: space-between;
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: center;
+            border-bottom: none;
+            border-right: none;
+            border-left: none;
+
+        }
+
+        #delivery-estimate {
+            margin-top: 20px;
+
+            height: auto;
+            border: 0.01px solid rgb(206, 203, 203);
+
+        }
+
+        #delivery-estimate h5+p {
+            padding-left: 20px;
+        }
+
+        .deleivery-adress-prdt {
+
+            height: 70px;
+
+            box-sizing: border-box;
+            display: flex;
+            margin: 10px 0px;
+            padding-left: 20px;
+        }
+
+        .deleivery-adress-prdt div {
+            margin: auto 30px;
+        }
+
+        .deleivery-adress-prdt div p {
+            font-size: 11px;
+            font-family: montserrat-regular, sans-serif;
+            color: rgba(0, 0, 0, .7);
+            margin: 8px;
+        }
+
+        #delivery-estimate h5+p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="total-order-summary-page">
+        <div id="summary-head-const">
+            <img src="https://images.bewakoof.com/web/bewakoof-primary-logo-white-bg-2x-1635745564.png" height="25px">
+        </div>
+        <p id="summary-items">Order Summary</p>
+        <div id="summary-shown-details">
+            <div id="summary-shown-left">
+
+                <div id="summary-push-prdt">
+                    <p class="delivery-price-estimated-color">DELIVERY ADDRESS</p>
+                    <div id="delivery-details">
+                        <h4> <span class="address-fullname">V A Magendran </span><span class="other_span">Other</span>
+                        </h4>
+                        <p> <span class="flatno">6-138,thiruvalluvar street, ekambarakuppam,</span>
+                            <span class="city_district">Chittoor</span> ,<span class="state">Andhra Pradesh</span> ,
+                            <span class="pincode">517592</span>
+                        </p>
+                        <p>Mobile :<span class="mobilenumber">
+                                9398451030
+                            </span> </p>
+                        <button>CHANGE OR ADD ADDRESS</button>
+                    </div>
+                </div>
+                <div id="delivery-estimate">
+                    <h5 class="delivery-price-estimated-color">ESTIMATED DELIVERY</h5>
+                    <p class="shipment-total-items">Shipment 1 of 2 : By 30 January 2022</p>
+                    <div class="deleivery-adress-prdt-append">
+                        <div class="deleivery-adress-prdt">
+                            <img height="100%"
+                                src="https://images.bewakoof.com/t320/not-ordinary-round-neck-3-4-sleeves-t-shirts-women-s-printed-round-neck-3-4-sleeve-t-shirts-354972-1621408984.jpg">
+                            <div>
+                                <p>Not Ordinary Round Neck 3/4 Sleeves T-shirt</p>
+                                <p> Qty : 1</p>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="summary-shown-right">
+
+                <div id="cont-price-summ" class="delivery-price-estimated-color">PRICE SUMMARY</div>
+                <div id="price-summary">
+                    <div>
+                        <p>Total MRP (Incl. of taxes)</p>
+                        <p>Delivery Fee </p>
+                        <p>Bag Discount </p>
+                        <p>Subtotal </p>
+                    </div>
+                    <div>
+                        <p class="total_calculate_price">0</p>
+                        <p>FREE</p>
+                        <p class="bag-discount">0</p>
+                        <p class="Subtotal">0</p>
+                    </div>
+
+
+                </div>
+                <div class="offer-div" id="saving-div"></div>
+                <div id="Total-amount-address">
+                    <div>
+                        <p>Total</p>
+                        <p class="Grand-total-pay">0</p>
+                    </div>
+                    <div>
+                        <button id="adress-payment-btn">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+var flag = JSON.parse(localStorage.getItem("flag"));
+var address_location = JSON.parse(localStorage.getItem("address_location"));
+console.log(address_location);
+document.querySelector(".other_span").innerText = address_location ; 
+    let order_summary_array = JSON.parse(localStorage.getItem("bewakoof_cart")) || [];
+    console.log(order_summary_array)
+
+
+
+    let array = JSON.parse(localStorage.getItem("myaddress_data"));
+
+    array.map(function (elem) {
+
+        var { area, city_district, flatno, fullname, landmark, pincode, state, mobilenumber } = elem;
+
+        document.querySelector(".address-fullname").textContent = fullname;
+        document.querySelector(".flatno").textContent = flatno;
+        document.querySelector(".city_district").textContent = city_district;
+        document.querySelector(".pincode").textContent = pincode;
+        document.querySelector(".state").textContent = state;
+        document.querySelector(".mobilenumber").textContent = mobilenumber;
+
+
+
+
+    })
+
+
+
+
+    function display_order_summary(order_summary_array) {
+
+
+
+
+        document.querySelector(".deleivery-adress-prdt-append").innerHTML = "";
+        order_summary_array.map((n, index) => {
+
+
+
+
+
+
+            var { name, image1 } = n;
+            var append_div = document.createElement("div");
+            append_div.className = "deleivery-adress-prdt";
+            var image = document.createElement("img");
+            var desc = document.createElement("div");
+            var p1 = document.createElement("p");
+            var p2 = document.createElement("p");
+
+            image.src = n.image1;
+            p1.textContent = name;
+            p2.textContent = "Qty : 1";
+
+            desc.append(p1, p2)
+            append_div.append(image, desc)
+            document.querySelector(".deleivery-adress-prdt-append").append(append_div)
+            var nextweek = new Date();
+
+
+
+            var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            month = month[nextweek.getMonth()]
+            document.querySelector(".shipment-total-items").textContent = `Shipment 1 of ${index + 1} : By ${nextweek.getDate()+3 + " " + month + " " + (nextweek.getFullYear())}`
+
+        })
+
+
+
+    }
+    display_order_summary(order_summary_array)
+
+    var order_summary_datas = JSON.parse(localStorage.getItem("order_summary_data"));
+
+    console.log(order_summary_datas)
+    // console.log(order_summary_a)
+
+    var { bag_discount, price, total } = order_summary_datas;
+    console.log(price, total, bag_discount)
+if(flag == true){
+    bag_discount = bag_discount + 100;
+    price -= 100;
+}
+
+    document.querySelector(".total_calculate_price").textContent = "₹ "+ total;
+    document.querySelector(".bag-discount").textContent ="₹ "+ bag_discount;
+    document.querySelector(".Subtotal").textContent = "₹ "+ price;
+    document.querySelector(".Grand-total-pay").textContent = "₹ "+ price;
+    document.getElementById("saving-div").innerText = `You are saving ₹ ${bag_discount} on this order`;
+
+
+    // total_calculate_price
+    //                 bag-discount
+    //                 Subtotal
+    // Grand-total-pay
+
+
+    // price_summary = {
+    //         price: sub_total_price,
+    //         bag_discount: bag_discounted_amount,
+    //         total: total_price,
+    //     }
+
+
+document.getElementById("adress-payment-btn").addEventListener("click",function(){
+    window.location.href="./payment.html";
+});
+</script>

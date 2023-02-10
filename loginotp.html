@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style/navbar.css"> -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        body {
+            background-image: linear-gradient(0deg, #fff4c4, #fff);
+            height: 100vh;
+        }
+
+        #login-otp-total {
+
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: white;
+
+
+        }
+
+        #login-otp-total>div {
+
+            height: 60%;
+            box-sizing: border-box;
+            display: grid;
+            flex-direction: column;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 1px;
+            width: 40%;
+            margin-top: 100px;
+
+
+
+
+
+
+        }
+
+        #login-otp-total>div #flex-input input {
+            border: 1px solid gray;
+            border: none;
+            border-bottom: 1px solid gray;
+            width: 20%;
+            outline: none;
+            margin: 5px;
+            text-align: center;
+            text-align: center;
+            font-size: 20px !important;
+            font-family: montserrat-bold, sans-serif !important;
+
+
+        }
+
+        #login-otp-total>div h1,
+        p,
+        div,
+        button {
+            margin: 1px;
+        }
+
+        #verify-part h1+p+input {
+            width: 70%;
+            margin: auto;
+            border: none;
+            border-bottom: 1px solid gray;
+            outline: none;
+            text-align: center;
+        }
+
+        .otp-style-color {
+            color: #42a242;
+        }
+
+        #login-otp-btn {
+            border: none;
+            background-color: gray;
+            color: white;
+            border-radius: 5px;
+            height: 50px;
+            text-decoration: white;
+            font-size: 19px;
+        }
+
+        #sent-to-number {
+            font-size: 22px;
+            text-align: center;
+            color: gray;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div id="login-otp-total">
+
+        <div id="verify-part">
+            <h1>verify with otp</h1>
+            <p>Sent to </p>
+            <input type="number" id="sent-to-number">
+            <p>Enter Otp </p>
+            <div id="flex-input">
+                <form action="">
+                    <input id="otp1" type="text" maxlength="1"><input id="otp2" type="text" maxlength="1"><input
+                        id="otp3" type="text" maxlength="1"><input id="otp4" type="text" maxlength="1">
+
+                </form>
+
+            </div>
+            <p class="otp-style-color">RESEND OTP</p>
+            <p class="otp-style-color">Login With Password</p>
+            <button id="login-otp-btn">LOGIN</button>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    // console.log(navbar());
+
+    document.getElementById("navbar").innerHTML = navbar();
+    document.querySelector("#nav_bar_manu").style.display = "none";
+
+    var item = JSON.parse(localStorage.getItem("bewakoof_cart")) || [];
+    // console.log(items);
+    document.getElementById("items").innerText = item.length;
+    console.log(item.length);
+
+
+
+    var sent = document.querySelector("#sent-to-number");
+
+
+
+    var customer_whole_data = JSON.parse(localStorage.getItem("customer_whole_data"));
+
+    sent.value = customer_whole_data.Mobile_input;
+    document.querySelector("#login-otp-btn").addEventListener("click", checkotp)
+
+    function checkotp() {
+        var otp1 = document.getElementById("otp1").value;
+        var otp2 = document.getElementById("otp2").value;
+        var otp3 = document.getElementById("otp3").value;
+        var otp4 = document.getElementById("otp4").value;
+        console.log(otp1, otp2, otp3, otp4);
+        console.log("Kalyani")
+        if (otp1 == 1 && otp2 == 2 && otp3 == 3 && otp4 == 4) {
+
+            alert("Login successful !")
+            window.location.href = "/index.html";
+
+        }
+        else {
+            alert("invalid OTP, please try again !, Your OTP is 1234");
+        }
+
+    }
+</script>

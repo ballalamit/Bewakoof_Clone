@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style/navbar.css"> -->
+    <style>
+        body {
+            background-color: #fffdf5;
+        }
+
+        #total-signup-page {
+
+            width: 70%;
+            margin: auto;
+            height: 100vh;
+            display: flex;
+            background-color: #fffdf5;
+
+
+        }
+
+        #total-signup-page>div {
+
+            flex: 1;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            margin-top: 180px;
+
+
+
+        }
+
+        #total-signup-page .left-signup img {
+
+            height: 470px;
+            margin: 30px auto;
+            box-sizing: border-box;
+
+
+
+
+
+        }
+
+        #total-signup-page .right-signup {
+
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #total-signup-page .right-signup>div {
+
+            display: grid;
+            height: 75%;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: white;
+            padding: 2% 10%;
+
+
+        }
+
+        /* #total-signup-page .right-signup>div h2,
+        h5,
+        input,
+        div,
+        button {} */
+
+        #total-signup-page .right-signup>div input {
+
+
+            height: 40px;
+            border: none;
+            border-bottom: 1px solid gray;
+            outline: none;
+
+
+        }
+
+        #total-signup-page .right-signup>div button {
+
+
+            width: 80%;
+            display: flex;
+            border: none;
+            margin: auto;
+            height: 50px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            color: white;
+            background-color: gray;
+            font-size: 20px;
+            margin-top: 20px;
+
+
+
+        }
+
+        #checkbox-signup {
+
+
+            width: 15px;
+            height: 15px;
+            line-height: 1px;
+        }
+
+        .fullname {
+            position: absolute;
+            top: 290px;
+            color: gray;
+        }
+
+        .fullname-active {
+            top: 270px;
+            transition: ease-in-out;
+        }
+
+        .Mobile {
+            position: absolute;
+            top: 330px;
+            color: gray;
+        }
+
+        .Mobile-active {
+            top: 330px;
+            transition: ease-in-out;
+        }
+
+        .email {
+            position: absolute;
+            top: 400px;
+            color: gray;
+        }
+
+        .email-active {
+            top: 380px;
+            transition: ease-in-out;
+        }
+
+        .password {
+            position: absolute;
+            top: 450px;
+            color: gray;
+        }
+
+        .password-active {
+            top: 430px;
+            transition: ease-in-out;
+        }
+        </style>
+        <link rel="stylesheet" href="./style/navbar.css">
+  </head>
+  <body>
+    <div id = "navbar"></div>
+    <div id="margin-top-slider1"></div>
+    <div id="total-signup-page">
+
+
+        <div class="left-signup">
+            <img src="https://images.bewakoof.com/web/desktop-sign-up-banner--1623760676.png" width="320px">
+        </div>
+        <div class="right-signup">
+
+
+            <div>
+                <h2>Sign Up</h2>
+                <h3>Hi new buddy, let's get you started with the bewakoofi!</h3>
+
+                <input class="fullname_input" type="text" placeholder="Full Name" required>
+                <label class="fullname"></label>
+                <input type="number" class="Mobile_input" placeholder="Mobile" required>
+                <label class="Mobile"></label>
+                <input type="email" class="email_input" placeholder="Email Id" required>
+                <label class="email"></label>
+                <input type="password" class="password_input" placeholder="Password" required>
+                <label class="password"></label>
+                <div><input id="checkbox-signup" type="checkbox">I want to receive order updates on
+                    Whatsapp</div>
+                <button id="signup-btn"> PROCEED</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    // console.log(navbar());
+
+    document.getElementById("navbar").innerHTML=navbar();
+document.querySelector("#nav_bar_manu").style.display = "none";
+    
+    var item = JSON.parse(localStorage.getItem("bewakoof_cart"))||[];
+    // console.log(items);
+    document.getElementById("items").innerText = item.length;
+    console.log(item.length);  
+    
+    
+
+    var customer_mobile_data = JSON.parse(localStorage.getItem("beakoof_login_data"));
+    console.log(customer_mobile_data)
+    document.querySelector(".Mobile_input").value = customer_mobile_data;
+
+    document.querySelector(".fullname_input").addEventListener("click", go)
+    function go() {
+        document.querySelector(".fullname").classList.toggle("fullname-active")
+    }
+
+    document.querySelector(".Mobile_input").addEventListener("click",
+        function () {
+            document.querySelector(".Mobile").classList.toggle("Mobile-active")
+
+        })
+    document.querySelector(".email_input").addEventListener("click",
+        function () {
+            document.querySelector(".email").classList.toggle("email-active")
+        })
+    document.querySelector(".password_input").addEventListener("click",
+        function () {
+            document.querySelector(".password").classList.add("password-active")
+        })
+
+
+    document.querySelector("#signup-btn").addEventListener("click", function () {
+
+        var obj = {
+            fullname: document.querySelector(".fullname_input").value,
+            Mobile_input: document.querySelector(".Mobile_input").value,
+            email_input: document.querySelector(".email_input").value,
+            password: document.querySelector(".password").value,
+
+        }
+        var name1= document.querySelector(".fullname_input").value;
+     var mobile1 =document.querySelector(".Mobile_input").value;
+    var email1 =document.querySelector(".email_input").value;
+    if(name1==""||mobile1==""||email1==""){
+        alert("Enter All Values")
+    } else{
+        window.location.href = "./loginotp.html";
+    }
+
+
+  localStorage.setItem("customer_whole_data", JSON.stringify(obj))
+
+        // window.location.href = "./loginotp.html";
+ })
+   
+
+
+</script>

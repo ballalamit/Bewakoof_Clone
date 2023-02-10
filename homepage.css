@@ -24,6 +24,11 @@
     position:fixed;
     width: 100%;
     background-color: white;
+    /* margin-bottom: 100px; */
+    /* border: 5px solid red; */
+}
+#nav+#scroll{
+    padding-top: 100px;
 }
 .n1{
 margin-left: 700px;
@@ -126,20 +131,23 @@ gap: 30px;
     margin-bottom: 20px;
 
 }
-#responsive{
+/* #scroll1{ */
     /* width: 80%; */
-    padding-top: 100px;
+    /* padding-top: 100px;
     margin-top: 0px;
-    display: flex;
+    display: flex; */
     /* border: 10px solid red; */
+    /* width: 100%; */
+  /* height: 400px; */
+  /* overflow: hidden;
     gap: 10px;
     cursor: pointer;
-}
-#responsive > img{
+} */
+/* #slide img{
    width: 100%;
    height: 400px;   
    cursor: pointer;
-}
+} */
 #long1{
     margin-top: 15px;
     width:100%;
@@ -275,19 +283,29 @@ gap: 30px;
         cursor: pointer;
     }
     #scroll{
-        display: flex;        
-        transform: translate3d(-61.7857px, 0px, 0px);
-        transition-duration: 3ms;
+         width: 100%;
+  /* height: 400px; */
+  overflow: hidden;
+    }
+
+    #slides{          
+        display: flex;
+  transition: all 0.0s ease-in-out;
         cursor: pointer;
         /* position: relative;  */
       height: 70vh;
     }
-    #scroll img{
+    #slide{
+        width: 100%;
+        height:100%    
+    }
+    #slide img{
         /* width: 100%; */
         /* position: absolute; */
     /* top: 0px; */
     width: 100%;
     cursor: pointer;
+    object-fit: cover;
     /* border-radius: 0px; */
     }
     /* #scroll:hover{
@@ -370,4 +388,21 @@ gap: 30px;
    body{
     font-family: montserrat-regular,sans-serif;
    }
-  
+
+  @media  screen and (max-width:800px)and (min-width:200px){
+
+ #responsive,#frame1,#trending,{
+    flex-wrap: wrap;
+     flex-direction: row; 
+       
+ }
+ #responsive img{
+     flex: 0 0 100%;
+ }
+ #bottom1,#bottom2,#bottom3{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+
+  }

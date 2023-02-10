@@ -62,11 +62,18 @@
         <h4>WINTERWEAR</h4> -->
     </div>
 </div>
-    <div id="responsive">
-        <img src="https://images.bewakoof.com/uploads/grid/app/b2g1-1x1-common-1675756486.jpg" alt="">
-        <img src="https://images.bewakoof.com/uploads/grid/app/1x1-b3at999-common--1--1675693780.jpg" alt="">
-        <img src="https://images.bewakoof.com/uploads/grid/app/1x1-flat-65-off-common-1674288704.jpg" alt="">
+       <div id="scroll">
+        <div id="slides">
+           <div id="slide">
+        <img src=https://images.bewakoof.com/uploads/grid/app/1x1-b3at999-common--1--1675693780.jpg alt=""> </div>
+       <div id="slide"> <img src=https://images.bewakoof.com/uploads/grid/app/1x1-clearance-sale-common-1675838695.jpg alt="">
+        <img src=https://images.bewakoof.com/uploads/grid/app/1x1-flat-65-off-common-1674288704.jpg alt=""></div>
+         <div id="slide"><img src=https://images.bewakoof.com/uploads/grid/app/bewagoofy-sale-1x1-common--1675940692.jpg alt="">
+        <img src=https://images.bewakoof.com/uploads/grid/app/1x1-flat-65-off-common-1674288704.jpg alt="">
+       </div> 
+       <div id="slide"><img src=https://images.bewakoof.com/uploads/grid/app/1x1-clearance-sale-common-1675838695.jpg alt=""></div>
     </div>
+</div>
     <div>
         <img src="https://images.bewakoof.com/uploads/grid/app/Desktop-Strip-6-1669115141.jpg" alt="" id="long1">
     </div>
@@ -140,9 +147,17 @@
                        </div>                  
     </div>
     <div id="scroll">
-        <img src="https://images.bewakoof.com/uploads/grid/app/Couple-T-shirts-1x1-01-1675685501.jpg" alt=""><img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-animeFLASHOUT-02-1675433302.jpg" alt=""><img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-winterwear-common-1675318355.jpg" alt="">
-        <img src="https://images.bewakoof.com/uploads/grid/app/Couple-T-shirts-1x1-01-1675685501.jpg" alt=""><img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-animeFLASHOUT-02-1675433302.jpg" alt=""><img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-winterwear-common-1675318355.jpg" alt="">
+        <div id="slides">
+           <div id="slide">
+        <img src="https://images.bewakoof.com/uploads/grid/app/Couple-T-shirts-1x1-01-1675685501.jpg" alt=""></div>
+        <div id="slide"> <img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-animeFLASHOUT-02-1675433302.jpg" alt=""></div>
+        <div id="slide"> <img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-winterwear-common-1675318355.jpg" alt="">
+       </div>
+        <div id="slide"><img src="https://images.bewakoof.com/uploads/grid/app/Couple-T-shirts-1x1-01-1675685501.jpg" alt=""></div>
+       <div id="slide"><img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-animeFLASHOUT-02-1675433302.jpg" alt=""> </div>
+        <div id="slide"><img src="https://images.bewakoof.com/uploads/grid/app/static-1x1-winterwear-common-1675318355.jpg" alt=""></div>
     </div>
+</div>
     <h4 id="trending">TOP ACCESSORIES</h4>
     <div id="bottom2">
         <div><img src=https://images.bewakoof.com/uploads/grid/app/category-box-Mobile-covers-1672907490.png alt=""></div>
@@ -179,7 +194,7 @@
             <li>Return Order</li>
             <li>Cancel Order</li>
         </ul>
-    </div>
+    </div>Z
     <div>
                 <ul>COMPANY
             <li>About Us</li>
@@ -303,5 +318,27 @@ icon4.addEventListener("click", function() {
   icon4.className = "fa-solid fa-heart"
 });
    
+//    const carousel = document.querySelector("responsive");
+//         let index = 0;
+//         setInterval(() => {
+//             index = (index + 1) % 1;
+//             carousel.style.transform = `translateX(${index * -5}%)`;
+//         }, 3000);
+
+
+        const slider = document.querySelector('#scroll');
+const slides = document.querySelectorAll('#slide');
+
+let index = 0;
+
+function changeSlide() {
+  slides[index].style.display = 'none';
+  index = (index + 1) % slides.length;
+  slides[index].style.display = 'flex';
+}
+
+slider.addEventListener('load', changeSlide);
+
+setInterval(changeSlide, 1000);
 </script>
 </html>

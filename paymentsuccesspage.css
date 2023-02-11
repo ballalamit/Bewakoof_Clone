@@ -33,10 +33,18 @@ header {
   text-align: center;
 }
 
+
+.con{
+  width: 25%;
+}
+.bimage{
+  cursor: pointer;
+}
+
 #sc {
   text-align: center;
   font-size: 40px;
-  background-color: yellow;
+  /* background-color: rgb(39, 185, 160); */
   color: rgb(0, 0, 0);
   /* border: 1px solid red; */
   width: 70%;

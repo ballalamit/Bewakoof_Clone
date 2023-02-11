@@ -644,7 +644,7 @@
     <div id="cartpage-total-div">
 
         <div id="cart-head-const">
-            <a href="./index.html"><img src="https://images.bewakoof.com/web/bewakoof-primary-logo-white-bg-2x-1635745564.png" height="25px"></a> 
+            <a href="./index.html"><img src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg" height="25px"></a> 
             <span>Signed as:<p id="logedin-email"></p></span>
         </div>
 
@@ -1392,14 +1392,17 @@ localStorage.setItem("flag", JSON.stringify(flag));
 
     function home_button(){
             localStorage.setItem("address_location", JSON.stringify("HOME"));
+            event.target.style.color ="teal";
         }    
         
     function office_button(){
             localStorage.setItem("address_location", JSON.stringify("OFFICE"));
+            event.target.style.color ="teal";
         }    
         
     function others_button(){
             localStorage.setItem("address_location", JSON.stringify("OTHER"));
+            
         } 
         
         

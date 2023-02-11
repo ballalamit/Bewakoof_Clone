@@ -6,14 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/wishlist.css">
+    <link rel="stylesheet" href="wishlist.css">
     
 </head>
 
 <body>
-    <div id="navbar"></div>
+    <div>
+
+    
+    <div id="mainnav">
+        <div id="nav">
+            <nav id="nav1">
+                <div id="nav1-1">
+                    <h6>Offers</h6>
+                    <h6>Fanbook</h6>
+                    <h6><i class="fa-solid fa-mobile"></i>Download App</h6>
+               
+                    <h6>TriBe Membership</h6>
+                   
+                    <h6 class="n1">Contact Us</h6>
+                    <h6>Track Order</h6>
+                </div>
+            
+        </nav>
+        <nav id="nav2">
+                <img onclick="window.location.href='index.html'  "src="https://images.bewakoof.com/web/ic-desktop-normal-bwkf-logo.svg" alt="">
+                <div id="category">
+                    <h4>MEN</h4>
+                <h4>WOMEN</h4>
+                <h4>MOBILE COVERS</h4>
+            </div>    
+                <input type="text" name="" placeholder="       Search By product,category or collection" id="search">
+                             <div id="category1">       
+                    <i class="fa-duoton e fa-pipe"></i>  
+                    <h4>Login</h4>
+                    <i onclick="window.location.href='wishlist.html'"  class="fa-regular fa-heart"></i>
+                    <i onclick="window.location.href='cartpage.html'" class="fa-solid fa-bag-shopping"> </i>
+                    <img src="https://images.bewakoof.com/web/india-flag-round-1639566913.png" alt="" class="region">
+                </div>
+            </nav>
+    
+    </div>
+</div>
+
+    
     <h2 id="wishlist-heading">WISH LIST</h2>
 
+    <div id="right"> </div>
     <div id="wishlist-container-return">
         <div id="wishlist-container">
         </div>
@@ -37,100 +76,98 @@
 <script>
 var cart  = JSON.parse(localStorage.getItem("bewakoof_cart"))||[];
 
+console.log(cart);
+
     var wishlist_data = JSON.parse(localStorage.getItem("bewakoof_wishlist"));
     console.log(wishlist_data);
 
     display_wishlist_product(wishlist_data);
+    
+////////////
+    function display_wishlist_product(data){
+    document.querySelector("#right").textContent="";
+        data.map(function(elem, index){
+            var div= document.createElement("div");
+            div.setAttribute("class", "container");
 
-    function display_wishlist_product(wishlist_data) {
+            var img= document.createElement("img");
+            img.setAttribute("src",elem.image_url)
+            img.setAttribute("class", "img")
+            img.addEventListener("click", function() {
+              window.location.href = "single_product.html";
+            });
 
-        document.getElementById("wishlist-container").innerHTML = "";
+            //
+            var divforbrandandname=document.createElement("div");
+            divforbrandandname.setAttribute("class", "divforbrandandname");
 
-        wishlist_data.map(function (elem, index) {
-            var wishlistContainer = document.getElementById("wishlist-container");
-            var wishlistProduct = document.createElement("div");
-            wishlistProduct.id = "wishlist-product";
-            // wishlistProduct.innerHTML=`
+            var h3= document.createElement("h3");
+            h3.textContent=elem.brand;
 
-            //         <img src=${elem.image1} alt="">
-            //         <p id="name">${elem.name}</p>
-            //         <p id="wishlist-price">₹${elem.subTotalPrice}<span>₹999</span><span>67% OFF</span></p>
-            //         <p id="wishlist-tribe">₹299 For Tribe Members</p>
-            //         <button>MOVE TO BAG</button>
-            //         <span class="wishlist-prod-close">&times;</span>
+            var h4= document.createElement("h4");
+            h4.textContent=elem.name;
+            divforbrandandname.append(h3,h4)
+            //
 
-            // `;
+            //////
 
-//             {
-// //     "name": "Jet Black Round Neck 3/4th Sleeve T-Shirt",
-// //     "subTotalPrice": 999,
-// //     "mrpPrice": 1999,
-// //     "image1": "https://image1s.bewakoof.com/t320/know-your-power-boyfriend-t-shirt-464873-1642404499-1.jpg"
-// // }
+            //
+            var divforfavicon=document.createElement("div");
+            divforfavicon.setAttribute("class", "divforfavicon");
+
+            var heart=document.createElement("i");
+            heart.setAttribute("class", "fa-regular fa-heart heart-icon");
+            
+            divforfavicon.append(heart);
+
+            var divfornamesandfavicon=document.createElement("div");
+            divfornamesandfavicon.setAttribute("class", "divfornamesandfavicon");
+
+            divfornamesandfavicon.append(divforbrandandname,divforfavicon)
+            //
+            //////
+
+            //
+            var divforprices=document.createElement("div");
+            divforprices.setAttribute("class", "divforprices");
+            var p=document.createElement("p");
+            p.setAttribute("class", "price");
+
+            p.textContent= "₹" + elem.price;
+
+            var strikeprice=document.createElement("p");
+            strikeprice.textContent="₹" + elem.strikeprice;
+
+            //var adtocartbtn=document.createElement("button");
+          
+            divforprices.append(p, strikeprice );
+            //
+
+            /////
 
 
-// {
-//     "id": "j4",
-//     "name": "Black Plus Size Puffer",
-//     "price": "3649",
-//     "image11": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433427-1.jpg",
-//     "image12": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433431-2.jpg",
-//     "image13": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433435-3.jpg",
-//     "image14": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433439-4.jpg",
-//     "image15": "https://image1s.bewakoof.com/t540/black-plus-size-puffer-jacket-364914-1642433443-5.jpg",
-//     "desc": "Flaunt your hot sassy looks in this Black Mens Plus Size Puffer Jacket. Be upbeat, match this puffer jacket with funky bag, trousers and some warm comfy boots and level up your style game.",
-//     "tribe": "100",
-//     "discount": "64"
-// }
+            //
+            var divfortribemember= document.createElement("div");
+            var tribeprice=document.createElement("p");
+            tribeprice.textContent= "₹" + elem.tribememprice + " For TriBe Members";
+            divfortribemember.setAttribute("class", "divfortribemember");
+            divfortribemember.append(tribeprice);
 
 
-var subTotalPrice = Math.floor(Number(elem.price) - (Number(elem.discount)/100)*elem.price);
 
-            var img = document.createElement("img");
-            var p1 = document.createElement("p");
-            var p2 = document.createElement("p");
-            var span1 = document.createElement("span");
-            var span2 = document.createElement("span");
-            var p3 = document.createElement("p");
+            //////////
+
+
+
             var btn = document.createElement("button");
-            var span3 = document.createElement("span");
+            btn.textContent="ADD TO CART"
+btn.addEventListener("click", ()=>{
+                    cart.push(elem);
+                    localStorage.setItem("bewakoof_cart", JSON.stringify(cart));
+                    moveToBag(index);
+                })
 
-            img.src = elem.image1;
-            p1.textContent = elem.name;
-            p1.id = "name";
-            p2.innerHTML = `${subTotalPrice}<span>${elem.price}</span><span>${elem.discount}% OFF</span>`;
-            p2.id = "wishlist-price";
-            p3.textContent = `₹${elem.tribe} For Tribe Members`;
-            p3.id = "wishlist-tribe";
-            btn.innerHTML = 'MOVE TO BAG';
-            btn.addEventListener("click", ()=>{
-                cart.push(elem);
-                localStorage.setItem("bewakoof_cart", JSON.stringify(cart));
-                moveToBag(index);
-            })
-            span3.innerHTML = "&times;";
-            span3.className = "wishlist-prod-close";
-
-            wishlistProduct.append(img, p1, p2, p3, btn, span3);
-
-            wishlistContainer.append(wishlistProduct);
-
-            span3.addEventListener("click", function () {
-                console.log("here", index);
-
-                wishlist_data.splice(index, 1);
-                console.log(wishlist_data);
-                localStorage.setItem("bewakoof_wishlist", JSON.stringify(wishlist_data));
-
-                display_wishlist_product(wishlist_data);
-
-            })
-
-        })
-
-    };
-
-    function moveToBag(index){
+                function moveToBag(index){
         wishlist_data.splice(index, 1);
         localStorage.setItem("bewakoof_wishlist", JSON.stringify(wishlist_data));
         display_wishlist_product(wishlist_data);
@@ -140,5 +177,134 @@ var subTotalPrice = Math.floor(Number(elem.price) - (Number(elem.discount)/100)*
 
 
 
+            /////////////
+
+
+
+
+
+
+
+
+
+
+
+            heart.addEventListener("click", function(){
+              //addfavItems(elem, index);
+
+              if (favitems.indexOf(elem) === -1) {
+                addfavItems(elem, index);
+                event.target.style.color = "red";
+              } else {
+                removefavItems(elem, index);
+                event.target.style.color = "black";
+              }
+            });
+
+
+            div.append(img,divfornamesandfavicon,divforprices, divfortribemember,btn  );
+            document.querySelector("#right").append(div);
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////
+
+
+
+
+
+
+
+
+
+
+
+//     function display_wishlist_product(wishlist_data) {
+
+//         document.getElementById("wishlist-container").innerHTML = "";
+
+//         wishlist_data.map(function (elem, index) {
+//             var wishlistContainer = document.getElementById("wishlist-container");
+//             var wishlistProduct = document.createElement("div");
+//             wishlistProduct.setAttribute("id", "wishlist-product");
+           
+
+
+// var subTotalPrice = Math.floor(Number(elem.price) - (Number(elem.discount)/100)*elem.price);
+
+//             var img = document.createElement("img");
+//             var p1 = document.createElement("p");
+//             var p2 = document.createElement("p");
+//             var span1 = document.createElement("span");
+//             var span2 = document.createElement("span");
+//             var p3 = document.createElement("p");
+//             var btn = document.createElement("button");
+//             var span3 = document.createElement("span");
+
+//             img.src = elem.image_url;
+//             img.setAttribute("class", "img")
+//             p1.textContent = elem.name;
+//             p1.id = "name";
+//             p2.innerHTML = `${elem.price}</span><span>`;
+//             p2.id = "wishlist-price";
+//             p3.textContent = `₹${elem.tribe} For Tribe Members`;
+//             p3.id = "wishlist-tribe";
+//             btn.innerHTML = 'MOVE TO BAG';
+//             btn.addEventListener("click", ()=>{
+//                 cart.push(elem);
+//                 localStorage.setItem("bewakoof_cart", JSON.stringify(cart));
+//                 moveToBag(index);
+//             })
+//             span3.innerHTML = "&times;";
+//             span3.className = "wishlist-prod-close";
+
+//             wishlistProduct.append(img, p1, p2, p3, btn, span3);
+
+//             wishlistContainer.append(wishlistProduct);
+
+//             span3.addEventListener("click", function () {
+//                 console.log("here", index);
+
+//                 wishlist_data.splice(index, 1);
+//                 console.log(wishlist_data);
+//                 localStorage.setItem("bewakoof_wishlist", JSON.stringify(wishlist_data));
+
+//                 display_wishlist_product(wishlist_data);
+
+//             })
+
+//         })
+
+//     };
+
+//     function moveToBag(index){
+//         wishlist_data.splice(index, 1);
+//         localStorage.setItem("bewakoof_wishlist", JSON.stringify(wishlist_data));
+//         display_wishlist_product(wishlist_data);
+//     }
+
+
+
+
+
+
 
 </script>
+
+
+<script src="https://kit.fontawesome.com/abb58b85fe.js" crossorigin="anonymous"></script>
